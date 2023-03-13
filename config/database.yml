@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: denver_hh_depot_production
-  username: denver_hh_depot
-  password: <%= ENV["DENVER_HH_DEPOT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
