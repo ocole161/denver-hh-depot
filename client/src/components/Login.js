@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/userSlice';
 
 
 function Login() {
-    const [errors, setErrors] = useState([])
+    const dispatch = useDispatch();
+    const [errors, setErrors] = useState([]);
     const [formData, setFormData] = useState({
-        username:'',
-        password:''
-    })
+        username: '',
+        password: ''
+    });
     const {username, password} = formData;
 
     const handleChange = (e) => {
@@ -19,11 +22,11 @@ function Login() {
 
     function onSubmit(e) {
         e.preventDefault()
-        const user = {
-            username,
-            password
-        }
-        console.log(user)
+        dispatch(login({
+            username: username,
+            user_type: "user"
+        }))
+        setErrors(errors)
     }
 
     return (

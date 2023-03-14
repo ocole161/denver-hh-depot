@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/userSlice';
 
 function SignUp() {
+    const dispatch = useDispatch();
     const [errors, setErrors] = useState([])
     const [formData, setFormData] = useState({
         username:'',
@@ -23,6 +26,11 @@ function SignUp() {
             password
         }
         console.log(user)
+        dispatch(login({
+            username: username,
+            user_type: "user"
+        }))
+        setErrors(errors)
     }
 
     return (
