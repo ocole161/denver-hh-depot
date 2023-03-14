@@ -2,7 +2,7 @@ class SpecialsController < ApplicationController
     before_action :authorized_user, only: [:create, :update, :destroy]
 
     def index
-        render json: Special.all
+        render json: Special.all.order(location_name: :asc)
     end
 
     def show

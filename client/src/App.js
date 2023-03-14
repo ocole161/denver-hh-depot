@@ -5,6 +5,8 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
+import Admin from './components/Admin';
+import SpecialView from './components/SpecialView';
 import { useDispatch } from 'react-redux';
 import { login } from './features/userSlice';
 import { logout } from './features/userSlice';
@@ -12,7 +14,16 @@ import Alert from 'react-bootstrap/Alert';
 
 function App() {
   const dispatch = useDispatch();
-  const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState(null)
+  const [specials, setSpecials] = useState([])
+  
+  useEffect(() => {
+    fetch("/specials")
+    .then(res => res.json())
+    .then(data => {
+        setSpecials(data)
+    })
+}, [])
 
   useEffect(() => {
     fetch('/authorized')
@@ -37,11 +48,13 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      {errors ? <Alert variant="warning" show={false}>{errors}</Alert> : null}
+      {errors ? <Alert variant="warning" >{errors}</Alert> : null}
       <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home specials={specials} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/special/:id" element={<SpecialView />} />
       </Routes>
     </BrowserRouter>
   );

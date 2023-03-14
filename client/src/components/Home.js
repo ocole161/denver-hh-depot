@@ -1,6 +1,10 @@
-function Home() {
+import SpecialCardList from "./SpecialCardList"
+
+function Home({ specials }) {
     return (
-        <div>Home</div>
+        <>
+        <SpecialCardList specials={specials}/>
+        </>
     )
 }
 
