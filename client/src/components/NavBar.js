@@ -7,8 +7,14 @@ function NavBar() {
     console.log(user)
 
     const handleLogout = () => {
-        console.log("click")
-        dispatch(logout())
+        fetch('/logout',{
+            method: 'DELETE',
+        })
+        .then(res => {
+            if(res.ok){
+                dispatch(logout())
+            }
+        })
     }
 
     return(

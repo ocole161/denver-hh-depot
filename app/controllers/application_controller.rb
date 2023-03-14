@@ -12,11 +12,11 @@ class ApplicationController < ActionController::API
     end
   
     def authorized_user
-      render json: { error: 'Please log in' }, status: :unauthorized unless current_user
+      render json: { error: 'Please log in to use this feature' }, status: :unauthorized unless current_user
     end
     
     def render_not_found_response(e)
-      render json: { error: "#{e.model} not found" }, status: :not_found
+      render json: { error: {e.model => "Not Found"} }, status: :not_found
     end
   
     def render_unprocessable_entity_response(e)

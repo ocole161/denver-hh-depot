@@ -1,0 +1,24 @@
+{
+    "favorites.resources": [
+        {
+            "filePath": "client/src/components",
+            "group": "Default"
+        },
+        {
+            "filePath": "app",
+            "group": "Default"
+        },
+        {
+            "filePath": "config",
+            "group": "Default"
+        },
+        {
+            "filePath": "db",
+            "group": "Default"
+        },
+        {
+            "filePath": "client/src/App.js",
+            "group": "Default"
+        }
+    ]
+}

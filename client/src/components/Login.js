@@ -22,11 +22,28 @@ function Login() {
 
     function onSubmit(e) {
         e.preventDefault()
-        dispatch(login({
-            username: username,
-            user_type: "user"
-        }))
-        setErrors(errors)
+        const user = {
+            username,
+            password
+        }
+        
+        fetch('/login',{
+            method: 'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify(user)
+        })
+        .then(res => {
+            if(res.ok){
+                res.json().then(
+                    dispatch(login({
+                        username: username,
+                        user_type: "user"
+                    }))
+                )
+            } else {
+                res.json().then(json => setErrors(json.error))
+            }
+        })
     }
 
     return (

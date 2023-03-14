@@ -19,18 +19,30 @@ function SignUp() {
         setFormData({ ...formData, [name]: value })
       }
 
-    function onSubmit(e) {
+      function onSubmit(e) {
         e.preventDefault()
         const user = {
             username,
             password
         }
-        console.log(user)
-        dispatch(login({
-            username: username,
-            user_type: "user"
-        }))
-        setErrors(errors)
+        
+        fetch('/users',{
+            method: 'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify(user)
+        })
+        .then(res => {
+            if(res.ok){
+                res.json().then(
+                    dispatch(login({
+                        username: username,
+                        user_type: "user"
+                    }))
+                )
+            } else {
+                res.json().then(json => setErrors(Object.entries(json.errors)))
+            }
+        })
     }
 
     return (
