@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+
 
 function Login() {
     const [errors, setErrors] = useState([])
@@ -23,13 +27,19 @@ function Login() {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <label>Login</label><br></br>
-            username<input type="text" name="username" value={username} onChange={handleChange} required/>
-            password<input type="password" name="password" value={password} onChange={handleChange} required/>
-            <input type="submit" value="Login" />
-            {errors?<h2>{errors}</h2>:null}
-        </form>
+        <Form onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Label>Username: </Form.Label>
+                <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password: </Form.Label>
+                <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
+            </Form.Group>
+            <Button variant="primary" type="submit">Login</Button>
+            {errors ? <Alert variant="warning">{errors}</Alert> : null}
+        </Form>
     )
 }
 

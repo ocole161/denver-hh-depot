@@ -1,7 +1,8 @@
 function NavBar() {
     return(
         <nav>
-            <a href="/login">login</a><> </>
+            <a href="/">Home</a><> </>
+            <a href="/login">Login</a><> </>
             <a href="/signup">Signup</a>
         </nav>
     )

@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
-  resources :user_special_favorites
-  resources :user_special_reviews
+  resources :user_special_favorites, only: [:create, :read, :destroy]
+  resources :user_special_reviews, only: [:create, :read]
   resources :users
   resources :specials
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  get '/hello', to: 'application#hello_world'
-
-  get '*path',
-  to: 'fallback#index',
-  constraints: ->(req) { !req.xhr? && req.format.html? }
+  get '*path', to: 'fallback#index', constraints: ->(req) { !req.xhr? && req.format.html? }
 end
