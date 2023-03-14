@@ -7,7 +7,7 @@ import { login } from '../features/userSlice';
 
 function SignUp() {
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState(null)
     const [formData, setFormData] = useState({
         username:'',
         password:''
@@ -33,12 +33,23 @@ function SignUp() {
         })
         .then(res => {
             if(res.ok){
-                res.json().then(
-                    dispatch(login({
-                        username: username,
-                        user_type: "user"
-                    }))
-                )
+                fetch('/login',{
+                    method: 'POST',
+                    headers:{'Content-Type': 'application/json'},
+                    body:JSON.stringify(user)
+                })
+                .then(res => {
+                    if(res.ok){
+                        res.json().then(
+                            dispatch(login({
+                                username: username,
+                                user_type: "user"
+                            }))
+                        )
+                    } else {
+                        res.json().then(json => setErrors(json.error))
+                    }
+                })
             } else {
                 res.json().then(json => setErrors(Object.entries(json.errors)))
             }
@@ -57,7 +68,7 @@ function SignUp() {
                 <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
             </Form.Group>
             <Button variant="primary" type="submit">Sign Up</Button>
-            {errors ? <Alert variant="warning">{errors}</Alert> : null}
+            {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         </Form>
     )
 }

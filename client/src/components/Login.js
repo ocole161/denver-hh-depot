@@ -8,7 +8,7 @@ import { login } from '../features/userSlice';
 
 function Login() {
     const dispatch = useDispatch();
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState(null);
     const [formData, setFormData] = useState({
         username: '',
         password: ''
