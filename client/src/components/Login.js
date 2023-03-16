@@ -24,7 +24,7 @@ function Login() {
         e.preventDefault()
         const user = {
             username,
-            password
+            password,
         }
         
         fetch('/login',{
@@ -34,12 +34,12 @@ function Login() {
         })
         .then(res => {
             if(res.ok){
-                res.json().then(
+                res.json().then(user => {
                     dispatch(login({
-                        username: username,
-                        user_type: "user"
+                        username: user.username,
+                        user_type: user.user_type
                     }))
-                )
+                })
             } else {
                 res.json().then(json => setErrors(json.error))
             }
@@ -49,7 +49,7 @@ function Login() {
     return (
         <Form onSubmit={onSubmit}>
             <Form.Group className="mb-3" controlId="formBasicUsername">
-            <Form.Label>Username: </Form.Label>
+                <Form.Label>Username: </Form.Label>
                 <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
             </Form.Group>
 

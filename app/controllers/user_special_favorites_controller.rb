@@ -1,4 +1,5 @@
 class UserSpecialFavoritesController < ApplicationController
+    wrap_parameters format: []
     before_action :authorized_user, only: [:create, :destroy]
 
     def create

@@ -1,4 +1,5 @@
 class UserSpecialReviewsController < ApplicationController
+    wrap_parameters format: []
     before_action :authorized_user, only: [:create]
 
     def create

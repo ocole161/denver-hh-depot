@@ -1,4 +1,5 @@
 class SpecialsController < ApplicationController
+    wrap_parameters format: []
     before_action :authorized_user, only: [:create, :update, :destroy]
 
     def index
@@ -29,6 +30,6 @@ class SpecialsController < ApplicationController
     private
 
     def special_params
-        params.permit(:location_name, :location_image, :location_neighborhood, :location_address, :location_url, :start_time, :end_time, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :sunday, :beer, :wine, :cocktails, :food, :hh_special_text, :needs_create_review, :needs_update_review, :needs_delete_review)
+        params.permit(:location_name, :location_image, :location_neighborhood, :location_address, :location_url, :start_time, :end_time, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :beer, :wine, :cocktails, :food, :hh_special_text, :needs_create_review, :needs_update_review, :needs_delete_review)
     end
 end
