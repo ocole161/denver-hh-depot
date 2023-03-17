@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function SpecialCard({ special }) {
     const startTime = new Date(special.start_time);
@@ -8,7 +9,8 @@ function SpecialCard({ special }) {
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
 
     return (
-        <Card style={{ width: '18rem' }}>
+        <Link to={`/specials/${special.id}`} className="no-format-link">
+        <Card style={{ width: '18rem' }} >
             <Card.Img variant="top" src={special.location_image} alt={special.location_name} />
             <Card.Body>
                 <Card.Title>{special.location_name}</Card.Title>
@@ -20,6 +22,7 @@ function SpecialCard({ special }) {
                     {special.food ? " Food" : null}</Card.Text>
             </Card.Body>
         </Card>
+        </Link>
     )
 }
 

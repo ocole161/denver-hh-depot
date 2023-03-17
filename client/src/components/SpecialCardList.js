@@ -1,6 +1,9 @@
 import SpecialCard from "./SpecialCard"
+import { useSelector } from "react-redux"
 
-function SpecialCardList({ specials }) {
+function SpecialCardList() {
+    const specials = useSelector((state) => state.specials);
+    
     return (
         <>
         <a href="/specials/create">Submit New Special</a>

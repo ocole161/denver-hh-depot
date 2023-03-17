@@ -1,9 +1,9 @@
 import SpecialCardList from "./SpecialCardList"
 
-function Home({ specials }) {
+function Home() {
     return (
         <>
-        <SpecialCardList specials={specials}/>
+        <SpecialCardList />
         </>
     )
 }

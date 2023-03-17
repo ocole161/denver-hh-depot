@@ -35,10 +35,9 @@ function Login() {
         .then(res => {
             if(res.ok){
                 res.json().then(user => {
-                    dispatch(login({
-                        username: user.username,
-                        user_type: user.user_type
-                    }))
+                    dispatch(login(user))
+                console.log(user.username)
+                console.log(user.user_type)
                 })
             } else {
                 res.json().then(json => setErrors(json.error))

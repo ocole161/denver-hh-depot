@@ -11,20 +11,20 @@ import CreateNewSpecial from './components/CreateNewSpecial';
 import { useDispatch } from 'react-redux';
 import { login } from './features/userSlice';
 import { logout } from './features/userSlice';
+import { createSpecials } from './features/specialsSlice';
 import Alert from 'react-bootstrap/Alert';
 
 function App() {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState(null)
-  const [specials, setSpecials] = useState([])
   
   useEffect(() => {
     fetch("/specials")
     .then(res => res.json())
     .then(data => {
-        setSpecials(data)
+        dispatch(createSpecials(data))
     })
-}, [])
+}, [dispatch])
 
   useEffect(() => {
     fetch('/authorized')
@@ -34,7 +34,7 @@ function App() {
           if(user){
             dispatch(login({
               username: user.username,
-              user_type: "user"
+              user_type: user.user_type,
             }))
           }else {
             dispatch(logout())
@@ -44,17 +44,17 @@ function App() {
         res.json().then(json => setErrors(json.error))
       }
     })
-  })
+  },[dispatch])
 
   return (
     <BrowserRouter>
       <NavBar />
       {errors ? <Alert variant="warning" >{errors}</Alert> : null}
       <Routes>
-            <Route path="/" element={<Home specials={specials} />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/admin" element={<Admin specials={specials} />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/specials/:id" element={<SpecialView />} />
             <Route path="/specials/create" element={<CreateNewSpecial />} />
       </Routes>
