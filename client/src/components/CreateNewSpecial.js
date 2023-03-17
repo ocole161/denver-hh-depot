@@ -29,7 +29,7 @@ function CreateNewSpecial() {
         hh_special_text: "",
         needs_create_review: true,
     })
-    const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text } = formData
+    const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
     const neighborhoods = [
         "Arvada", 
@@ -65,8 +65,17 @@ function CreateNewSpecial() {
 
     function handleChange(e) {
         e.preventDefault()
+        console.log(e)
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
+        console.log(formData)
+    }
+
+    function handleCheckboxChange(e) {
+        console.log(e)
+        const { name, value } = e.target
+        setFormData({...formData, [name]: value})
+        console.log(formData)
     }
 
     const handleSubmit = (e) => {
@@ -81,8 +90,8 @@ function CreateNewSpecial() {
         .then(r => {
             if(r.ok) {
                 r.json().then(
-                navigate("/admin"),
-                window.alert("Property added!")
+                navigate("/"),
+                window.alert("Happy Hour Special Added!")
                 )
             } else {
                 r.json().then(json => setErrors(json.error))
@@ -94,7 +103,7 @@ function CreateNewSpecial() {
         <Form onSubmit={handleSubmit}>
             <Form.Group >
                 <Form.Label>Location Name</Form.Label>
-                <Form.Control type="text" name="location_name" value={location_name} onChange={handleChange} required />
+                <Form.Control required type="text" name="location_name" value={location_name} onChange={handleChange} />
             </Form.Group>
             <Form.Group >
                 <Form.Label>Location Image URL</Form.Label>
@@ -118,7 +127,7 @@ function CreateNewSpecial() {
             </Form.Group>
             <Form.Group >
                 <Form.Label>Start Time:</Form.Label>
-                <Form.Select aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
+                <Form.Select required aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
                     <option value="">Select Start Time</option>
                     {times.map(time => {
                         return <option key={time} value={time}>{time}</option>})}
@@ -126,7 +135,7 @@ function CreateNewSpecial() {
             </Form.Group>
             <Form.Group >
             <Form.Label>End Time:</Form.Label>
-                <Form.Select aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
+                <Form.Select required aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
                     <option value="">Select End Time</option>
                     {times.map(time => {
                         return <option key={time} value={time}>{time}</option>})}
@@ -135,22 +144,22 @@ function CreateNewSpecial() {
             <Form.Group >
                 <Form.Label>Days of the Week</Form.Label>
                 <div>
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Mon' name='monday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Tue' name='tuesday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Wed' name='wednesday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Thu' name='thursday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Fri' name='friday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Sat' name='saturday' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Sun' name='sunday' value={true} onChange={() => handleChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Mon' name='monday' value={!monday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Tue' name='tuesday' value={!tuesday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Wed' name='wednesday' value={!wednesday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Thu' name='thursday' value={!thursday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Fri' name='friday' value={!friday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Sat' name='saturday' value={!saturday} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Sun' name='sunday' value={!sunday} onChange={handleCheckboxChange} />
                 </div>
             </Form.Group>
             <Form.Group >
                 <Form.Label>Types of Specials</Form.Label>
                 <div>
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Beer' name='beer' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Wine' name='wine' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Cocktails' name='cocktails' value={true} onChange={() => handleChange} />
-                    <Form.Check inline type="checkbox" id='default-checkbox' label='Food' name='food' value={true} onChange={() => handleChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Beer' name='beer' value={!beer} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Wine' name='wine' value={!wine} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Cocktails' name='cocktails' value={!cocktails} onChange={handleCheckboxChange} />
+                    <Form.Check inline type="checkbox" id='default-checkbox' label='Food' name='food' value={!food} onChange={handleCheckboxChange} />
                 </div>
             </Form.Group>
             <Form.Group >
