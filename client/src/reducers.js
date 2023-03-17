@@ -1,10 +1,12 @@
-import { combineReducers } from "redux";
-import userReducer from "./features/userSlice";
-import specialsReducer from "./features/specialsSlice";
+// OLD METHOD
 
-const rootReducer = combineReducers({
-    specials: specialsReducer,
-    user: userReducer,
-})
+// import { combineReducers } from "redux";
+// import userReducer from "./features/userSlice";
+// import specialsReducer from "./features/specialsSlice";
 
-export default rootReducer;
+// const rootReducer = combineReducers({
+//     specials: specialsReducer,
+//     user: userReducer,
+// })
+
+// export default rootReducer;

@@ -1,39 +1,69 @@
+import { createSlice } from '@reduxjs/toolkit'
 
-// Action Creators
-export const login = (user) => {
-    return {
-        type: "user/login",
-        payload: user,
-    }
-}
+const userSlice = createSlice({
+    name: 'user',
+    initialState: {
+        username: null,
+        user_type: 'visitor',
+    },
+    reducers: {
+        login(state, action) {
+                return {
+                    username: action.payload.username,
+                    user_type: action.payload.user_type,
+                }
+        },
 
-export const logout = () => {
-    return {
-        type: "user/logout",
-    }
-}
-
-// Reducers
-const initialState = {
-    username: "Visitor",
-    user_type: "visitor",
-}
-
-export default function userReducer(state = initialState, action) {
-    switch (action.type) {
-        case "user/login":
+        logout() {
             return {
-                username: action.payload.username,
-                user_type: action.payload.user_type,
+                username: 'Visitor',
+                user_type: 'visitor',
             }
-
-        case "user/logout": 
-            return {
-            username: "Visitor",
-            user_type: "visitor",
         }
-
-        default:
-            return state;
     }
-}
+})
+
+export const { login, logout } = userSlice.actions;
+export default userSlice.reducer;
+
+
+// OLD METHOD
+
+// // Action Creators
+// export const login = (user) => {
+//     return {
+//         type: "user/login",
+//         payload: user,
+//     }
+// }
+
+// export const logout = () => {
+//     return {
+//         type: "user/logout",
+//     }
+// }
+
+// // Reducers
+// const initialState = {
+//     username: "Visitor",
+//     user_type: "visitor",
+// }
+
+// export default function userReducer(state = initialState, action) {
+//     switch (action.type) {
+//         case "user/login":
+//             return {
+//                 username: action.payload.username,
+//                 user_type: action.payload.user_type,
+//             }
+
+//         case "user/logout": 
+//             return {
+//             username: "Visitor",
+//             user_type: "visitor",
+//         }
+
+//         default:
+//             return state;
+//     }
+// }

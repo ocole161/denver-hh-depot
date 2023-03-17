@@ -13,10 +13,14 @@ import { login } from './features/userSlice';
 import { logout } from './features/userSlice';
 import { createSpecials } from './features/specialsSlice';
 import Alert from 'react-bootstrap/Alert';
+import { useSelector } from "react-redux"
+import Spinner from 'react-bootstrap/Spinner';
 
 function App() {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState(null)
+  const specials = useSelector((state) => state.specials);
+  const user = useSelector((state) => state.user);
   
   useEffect(() => {
     fetch("/specials")
@@ -37,7 +41,7 @@ function App() {
               user_type: user.user_type,
             }))
           }else {
-            dispatch(logout())
+            dispatch(logout());
           }
       })
       } else {
@@ -45,6 +49,14 @@ function App() {
       }
     })
   },[dispatch])
+
+  if (specials[0] === undefined || user.username === null) {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  } 
 
   return (
     <BrowserRouter>
