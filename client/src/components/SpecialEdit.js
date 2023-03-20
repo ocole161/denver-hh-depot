@@ -9,8 +9,6 @@ function SpecialEdit({ neighborhoods, times, onUpdateSpecial }) {
     const specials = useSelector((state) => state.specials);
     const { id } = useParams()
     const special = specials.find((special) => special.id === parseInt(id))
-
-
     const navigate = useNavigate();
     const [errors, setErrors] = useState(null);
     const [formData, setFormData] = useState({

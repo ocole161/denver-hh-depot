@@ -8,13 +8,12 @@ const specialsSlice = createSlice({
             return action.payload
         },
 
-
         addSpecial(state, action) {
-            state.push(action.payload);
+            return state.push(action.payload);
         },
 
         removeSpecial(state, action) {
-            state.filter((special) => special.id !== action.payload)
+            return state.filter((special) => special.id !== action.payload)
         }
     }
 })
