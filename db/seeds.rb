@@ -6,7 +6,7 @@ UserSpecialReview.destroy_all
 puts "Seeding..."
 
 # Create Specials
-Special.create(
+s1 = Special.create(
     location_name: "Aloy Modern Thai",
     location_image: "https://s3-media0.fl.yelpcdn.com/bphoto/xIPALfR5UYWAR7nKCy46pQ/o.jpg",
     location_neighborhood: "LoDo",
@@ -57,6 +57,9 @@ Special.create(
 
 # Create users
 User.create(username: "admin", password: "a", user_type: "admin")
-User.create(username: "user", password: "u", user_type: "user")
+u1 = User.create(username: "user", password: "u", user_type: "user")
+
+# Create a review
+UserSpecialReview.create(rating: 4, user_id: u1.id, special_id: s1.id)
 
 puts "Seeding finished!"

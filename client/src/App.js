@@ -73,6 +73,7 @@ function App() {
             dispatch(login({
               username: user.username,
               user_type: user.user_type,
+              id: user.id,
             }))
           }else {
             dispatch(logout());

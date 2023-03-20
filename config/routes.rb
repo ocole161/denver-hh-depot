@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_special_favorites, only: [:create, :show, :destroy]
-  resources :user_special_reviews, only: [:create, :show]
+  resources :user_special_reviews, only: [:index, :create, :update, :show]
   resources :users
   resources :specials
 

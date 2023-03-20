@@ -1,13 +1,16 @@
 // import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 
 
 function SpecialView() {
     const navigate = useNavigate();
+    const user = useSelector((state) => state.user);
     const specials = useSelector((state) => state.specials);
     const { id } = useParams()
     const special = specials.find((special) => special.id === parseInt(id))
@@ -19,6 +22,17 @@ function SpecialView() {
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
     
     const [errors, setErrors] = useState(null);
+    const [userRating, setUserRating] = useState(null);
+
+
+    useEffect(() => {
+        fetch("/user_special_reviews")
+        .then(res => res.json())
+        .then(reviews => {
+            setUserRating(reviews.find(review => review.user.id === user.id && review.special.id === parseInt([id])))
+        })
+    }, [id])
+    
 
     function requestDelete(e) {
         e.preventDefault();
@@ -42,6 +56,55 @@ function SpecialView() {
         })
     }
 
+    function changeRating(e) {
+        if(!userRating) {
+            const formData = {
+                user_id: user.id,
+                special_id: id,
+                rating: e.target.value,
+            }
+            fetch("/user_special_reviews", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(r => {
+                if(r.ok) {
+                    r.json().then(
+                    setUserRating(formData)
+                    )
+                } else {
+                    r.json().then(json => setErrors(json.error))
+                }
+            })
+        } else {
+            const formData = ({...userRating, rating: e.target.value})
+            fetch(`/user_special_reviews/${userRating.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(r => {
+                if(r.ok) {
+                    r.json().then(
+                    setUserRating(formData)    
+                    )
+                } else {
+                    r.json().then(json => setErrors(json.error))
+                }
+            })
+        }
+        
+        
+        
+
+    }
+
     return (
         <>
         <h1 className="special-view-title">{special.location_name}</h1>
@@ -59,8 +122,20 @@ function SpecialView() {
         <p>{special.location_address}</p>
         <p>Specials: {special.hh_special_text}</p>
         <a href={special.location_url}>Website</a>
+        <Form.Group>
+            <Form.Label>Your Rating</Form.Label>
+            <Form.Select name="rating" value={userRating ? userRating.rating : ""} onChange={changeRating}>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </Form.Select>
+        </Form.Group>
         <Button href={`/specials/edit/${id}`}>Edit</Button>
         <Button onClick={requestDelete}>Request Deletion</Button>
+        {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         </>
     )
 }

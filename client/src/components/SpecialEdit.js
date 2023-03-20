@@ -44,10 +44,8 @@ function SpecialEdit({ neighborhoods, times, onUpdateSpecial }) {
     
     function handleChange(e) {
         e.preventDefault()
-        console.log(e)
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
-        console.log(formData)
     }
 
     function handleCheckboxChange(e) {

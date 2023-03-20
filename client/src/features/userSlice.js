@@ -5,12 +5,15 @@ const userSlice = createSlice({
     initialState: {
         username: null,
         user_type: 'visitor',
+        id: null,
     },
     reducers: {
         login(state, action) {
+            console.log(action.payload)
                 return {
                     username: action.payload.username,
                     user_type: action.payload.user_type,
+                    id: action.payload.id,
                 }
         },
 
@@ -18,6 +21,7 @@ const userSlice = createSlice({
             return {
                 username: 'Visitor',
                 user_type: 'visitor',
+                id: null,
             }
         }
     }
