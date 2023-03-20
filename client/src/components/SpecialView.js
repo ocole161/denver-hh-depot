@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import Image from 'react-bootstrap/Image'
+import Button from 'react-bootstrap/Button'
 
 
 function SpecialView() {
@@ -31,6 +32,7 @@ function SpecialView() {
         <p>{special.location_address}</p>
         <p>Specials: {special.hh_special_text}</p>
         <a href={special.location_url}>Website</a>
+        <Button href={`/specials/edit/${id}`}>Edit</Button>
         </>
     )
 }

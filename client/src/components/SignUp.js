@@ -23,7 +23,8 @@ function SignUp() {
         e.preventDefault()
         const user = {
             username,
-            password
+            password,
+            user_type: 'user',
         }
         
         fetch('/users',{
@@ -41,10 +42,7 @@ function SignUp() {
                 .then(res => {
                     if(res.ok){
                         res.json().then(
-                            dispatch(login({
-                                username: username,
-                                user_type: "user"
-                            }))
+                            dispatch(login(user))
                         )
                     } else {
                         res.json().then(json => setErrors(json.error))

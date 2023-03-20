@@ -4,9 +4,10 @@ const specialsSlice = createSlice({
     name: 'specials',
     initialState: [],
     reducers: {
-        createSpecials(state, action) {
+        setSpecials(state, action) {
             return action.payload
         },
+
 
         addSpecial(state, action) {
             state.push(action.payload);
@@ -18,7 +19,7 @@ const specialsSlice = createSlice({
     }
 })
 
-export const { createSpecials, addSpecial, removeSpecial } = specialsSlice.actions;
+export const { setSpecials, addSpecial, removeSpecial } = specialsSlice.actions;
 export default specialsSlice.reducer;
 
 
