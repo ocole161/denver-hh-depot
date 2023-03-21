@@ -41,3 +41,13 @@
   text-decoration: none;
   color: black;
 }
+
+.card_image {
+  width: 100px;
+  height: 260px;
+}
+
+.card {
+  width: 300px; 
+  margin-top: 20px 
+}

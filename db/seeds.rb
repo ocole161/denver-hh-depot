@@ -30,7 +30,7 @@ s1 = Special.create(
     needs_update_review: false,
     needs_delete_review: false,
     lat: 39.75434700904769,
-     ng: -104.99063138849039
+    lng: -104.99063138849039
 )
 Special.create(
     location_name: "The Well Pizza and Bar",
@@ -54,7 +54,87 @@ Special.create(
     hh_special_text: "$1 Off Beer\n$2 Off Wine\n$3 off Specialty Cocktails",
     needs_create_review: true,
     needs_update_review: true,
-    needs_delete_review: true
+    needs_delete_review: true,
+    lat: 39.76238479071804,
+    lng: -105.01423521462846
+)
+Special.create(
+    location_name: "Sidecar Lounge",
+    location_image: "https://s3-media0.fl.yelpcdn.com/bphoto/Z_ZXI-euOkxOc14SFJpOHA/o.jpg",
+    location_neighborhood: "LoDo",
+    location_address: "2048 Larimer Street,  Denver, Co 80205",
+    location_url: "http://www.sidecardenver.com/",
+    start_time: "11am",
+    end_time: "7pm",
+    monday: true,
+    tuesday: true,
+    wednesday: true,
+    thursday: true,
+    friday: true,
+    saturday: true,
+    sunday: true,
+    beer: true,
+    wine: false,
+    cocktails: true,
+    food: true,
+    hh_special_text: "$3 Beers\n$5 Drinks and Shots",
+    needs_create_review: true,
+    needs_update_review: true,
+    needs_delete_review: true,
+    lat: 39.75355454654288, 
+    lng: -104.99159073673704
+)
+Special.create(
+    location_name: "View House",
+    location_image: "https://s3-media0.fl.yelpcdn.com/bphoto/Lk5TJooer5zAJIjyq3qPZQ/o.jpg",
+    location_neighborhood: "LoDo",
+    location_address: "2015 Market St, Denver, CO 80205",
+    location_url: "https://viewhouse.com/",
+    start_time: "3pm",
+    end_time: "6pm",
+    monday: true,
+    tuesday: true,
+    wednesday: true,
+    thursday: true,
+    friday: true,
+    saturday: false,
+    sunday: false,
+    beer: true,
+    wine: true,
+    cocktails: true,
+    food: true,
+    hh_special_text: "$4 Select Beers, Wines, and Wells\n$6 Select Beers, Wines, and Cocktails\n$8 32oz Beers, Premium wine and Cocktails\nFoodSpecials",
+    needs_create_review: true,
+    needs_update_review: true,
+    needs_delete_review: true,
+    lat: 39.754132109766616,
+    lng: -104.99332598618777
+)
+Special.create(
+    location_name: "Mile High Spirits",
+    location_image: "https://s3-media0.fl.yelpcdn.com/bphoto/7AB45H3_AzfAB8bAduwMfg/o.jpg",
+    location_neighborhood: "LoDo",
+    location_address: "2201 Lawrence St, Denver, CO",
+    location_url: "https://www.drinkmhs.com/",
+    start_time: "4pm",
+    end_time: "7pm",
+    monday: false,
+    tuesday: true,
+    wednesday: true,
+    thursday: true,
+    friday: true,
+    saturday: false,
+    sunday: false,
+    beer: false,
+    wine: false,
+    cocktails: true,
+    food: false,
+    hh_special_text: "$4 Cocktails\n$4 Off Bottles",
+    needs_create_review: true,
+    needs_update_review: true,
+    needs_delete_review: true,
+    lat: 39.75458591767968, 
+    lng: -104.9893377004623
 )
 
 # Create users
