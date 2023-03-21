@@ -28,16 +28,29 @@ function CreateNewSpecial({ neighborhoods, times }) {
         food: false,
         hh_special_text: "",
         needs_create_review: true,
+        lat: null,
+        lng: null,
     })
     const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
-
+    function geocodeAddress() {
+        const address = formData.location_address;
+      
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
+        .then((response) => {
+            return response.json();
+        }).then(jsonData => {
+            setFormData({...formData, lat: jsonData.results[0].geometry.location.lat, lng: jsonData.results[0].geometry.location.lng});
+        })
+        .catch(error => {
+            setErrors(error);
+        })
+      }
+    
     function handleChange(e) {
         e.preventDefault()
-        console.log(e)
         const { name, value } = e.target
         setFormData({...formData, [name]: value})
-        console.log(formData)
     }
 
     function handleCheckboxChange(e) {
@@ -47,6 +60,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        geocodeAddress()
         fetch("/specials", {
             method: "POST",
             headers: {
@@ -86,7 +100,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
             </Form.Group>
             <Form.Group >
                 <Form.Label>Location Address</Form.Label>
-                <Form.Control type="text" name="location_address" value={location_address} onChange={handleChange} />
+                <Form.Control required type="text" name="location_address" value={location_address} onChange={handleChange} />
             </Form.Group>
             <Form.Group >
                 <Form.Label>Website</Form.Label>
@@ -94,7 +108,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
             </Form.Group>
             <Form.Group >
                 <Form.Label>Start Time:</Form.Label>
-                <Form.Select required aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
+                <Form.Select aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
                     <option value="">Select Start Time</option>
                     {times.map(time => {
                         return <option key={time} value={time}>{time}</option>})}
@@ -102,7 +116,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
             </Form.Group>
             <Form.Group >
             <Form.Label>End Time:</Form.Label>
-                <Form.Select required aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
+                <Form.Select aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
                     <option value="">Select End Time</option>
                     {times.map(time => {
                         return <option key={time} value={time}>{time}</option>})}
@@ -131,7 +145,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
             </Form.Group>
             <Form.Group >
                 <Form.Label>Happy Hour Specials</Form.Label>
-                <Form.Control as="textarea" rows="3" required name="hh_special_text" value={hh_special_text} onChange={handleChange} />
+                <Form.Control as="textarea" rows="3" name="hh_special_text" value={hh_special_text} onChange={handleChange} />
             </Form.Group>
             <Button variant="primary" type="submit">
                 Submit

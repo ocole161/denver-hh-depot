@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -6,6 +5,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import MapSpecialView from "./MapSpecialView"
 
 
 function SpecialView() {
@@ -31,7 +31,7 @@ function SpecialView() {
         .then(reviews => {
             setUserRating(reviews.find(review => review.user.id === user.id && review.special.id === parseInt([id])))
         })
-    }, [id])
+    }, [id, user.id])
     
 
     function requestDelete(e) {
@@ -136,6 +136,7 @@ function SpecialView() {
         <Button href={`/specials/edit/${id}`}>Edit</Button>
         <Button onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+        <MapSpecialView special={special} />
         </>
     )
 }

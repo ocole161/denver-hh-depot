@@ -36,7 +36,7 @@ function SpecialCardDelete({ special, onUpdateSpecial, deleteSpecial }) {
 
     function setDeleted(e) {
         e.preventDefault();
-        if (window.confirm("Are you sure you want to delete this special?") == true) {
+        if (window.confirm("Are you sure you want to delete this special?") === true) {
             fetch(`specials/${special.id}`, {
                 method: "DELETE",
             })
