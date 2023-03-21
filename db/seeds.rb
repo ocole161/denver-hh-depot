@@ -28,7 +28,9 @@ s1 = Special.create(
     hh_special_text: "Draft and Can Beers $5 or less\nSpecialty Cocktails $6\nWine $6 Glasses & $20 Bottles\nSake 1/2 off\n\n$3 off Appetizers",
     needs_create_review: false,
     needs_update_review: false,
-    needs_delete_review: false
+    needs_delete_review: false,
+    lat: 39.75434700904769,
+     ng: -104.99063138849039
 )
 Special.create(
     location_name: "The Well Pizza and Bar",

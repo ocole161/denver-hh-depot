@@ -1,5 +1,6 @@
 import SpecialCard from "./SpecialCard"
 import { useSelector } from "react-redux"
+import MapAll from "./MapAll";
 
 function SpecialCardList() {
     const specials = useSelector((state) => state.specials);
@@ -10,6 +11,7 @@ function SpecialCardList() {
         {specials.map(special => {
         return <SpecialCard key={special.id} special={special}/>
         })}
+        <MapAll specials={specials}/>
         </>
     )
 }

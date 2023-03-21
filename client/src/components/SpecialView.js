@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
-import MapSpecialView from "./MapSpecialView"
+import MapSingle from "./MapSingle"
 
 
 function SpecialView() {
@@ -136,7 +136,7 @@ function SpecialView() {
         <Button href={`/specials/edit/${id}`}>Edit</Button>
         <Button onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
-        <MapSpecialView special={special} />
+        <MapSingle special={special} />
         </>
     )
 }

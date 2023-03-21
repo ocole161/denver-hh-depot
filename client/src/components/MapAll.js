@@ -3,15 +3,15 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 
 
-function MapSpecialView({ special }) {
+function MapAll({ specials }) {
   const containerStyle = {
     width: '400px',
     height: '400px'
   };
-  const { lat, lng, location_name } = special
+
   const center = {
-    lat: parseFloat(lat),
-    lng: parseFloat(lng)
+    lat: 39.73715,
+    lng: -104.989174
   };
 
   const { isLoaded } = useJsApiLoader({
@@ -19,20 +19,28 @@ function MapSpecialView({ special }) {
     googleMapsApiKey: `${process.env.REACT_APP_API_KEY}`
   })
 
-
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={15}
+        zoom={11}
       >
-        <Marker
-          position={center}
-          title={location_name}
-        />
+
+        {specials.map(special => {
+          return (
+            <Marker 
+              key={special.id}
+              position={{
+                lat: parseFloat(special.lat),
+                lng: parseFloat(special.lng)
+              }}
+              title={special.location_name}
+            />
+          )}
+        )}
         <></>
       </GoogleMap>
   ) : <></>
 }
 
-export default React.memo(MapSpecialView)
+export default React.memo(MapAll)
