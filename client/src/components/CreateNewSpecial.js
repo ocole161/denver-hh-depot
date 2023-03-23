@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { addSpecial } from "../features/specialsSlice";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
@@ -8,6 +9,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 function CreateNewSpecial({ neighborhoods, times }) {
+    const navigate = useNavigate()
     const dispatch = useDispatch();
 
     const [open, setOpen] = useState(false);
@@ -83,13 +85,15 @@ function CreateNewSpecial({ neighborhoods, times }) {
         })
         .then(r => {
             if(r.ok) {
-                r.json().then(
-                dispatch(addSpecial(formData)),
-                setErrors(null),
-                closeModal()
-                )
+                r.json().then(json => {
+                    console.log(json)
+                    dispatch(addSpecial(json))
+                    setErrors(null)
+                    closeModal()
+                    navigate(`/specials/${json.id}`)
+            })
             } else {
-                r.json().then(json => setErrors(json.error))
+                r.json().then(json => setErrors(json.errors))
             }
         })
     }

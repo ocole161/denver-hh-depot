@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import MapSingle from "./MapSingle"
+import Spinner from "react-bootstrap/esm/Spinner"
 
 
 function SpecialView() {
@@ -112,6 +113,14 @@ function SpecialView() {
             })
         }
     }
+
+    if(special === undefined) {
+        return (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        );
+    } 
 
     return (
         <>

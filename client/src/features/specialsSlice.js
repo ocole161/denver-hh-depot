@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const specialsSlice = createSlice({
     name: 'specials',
@@ -8,11 +8,11 @@ const specialsSlice = createSlice({
             return action.payload
         },
 
-        addSpecial(state, action) {
-            return state.push(action.payload);
+        addSpecial: (state, action) => {
+            return [...state, action.payload]
         },
 
-        removeSpecial(state, action) {
+        removeSpecial (state, action) {
             return state.filter((special) => special.id !== action.payload)
         }
     }

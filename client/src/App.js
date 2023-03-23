@@ -60,6 +60,7 @@ function App() {
     fetch("/specials")
     .then(res => res.json())
     .then(data => {
+        console.log(data)
         dispatch(setSpecials(data))
     })
 }, [dispatch])
