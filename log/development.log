@@ -38520,3 +38520,1531 @@ Processing by UserSpecialReviewsController#update as JSON
 Completed 200 OK in 13ms (Views: 3.3ms | ActiveRecord: 1.4ms | Allocations: 4636)
 
 
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:03:06 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.93ms)
+Completed 200 OK in 79ms (Views: 58.8ms | ActiveRecord: 9.6ms | Allocations: 22972)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:03:06 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1255)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:03:06 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.25ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 2.0ms | Allocations: 13423)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:03:24 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>2, "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.7ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 22ms (Views: 6.0ms | ActiveRecord: 2.5ms | Allocations: 4469)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:04:07 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.1ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.81ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 1.9ms | Allocations: 12930)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:04:09 -0600
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:04:09 -0600
+Processing by SpecialsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.66ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 3.1ms | Allocations: 10432)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 62ms (Views: 2.4ms | ActiveRecord: 33.9ms | Allocations: 12935)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:04:09 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.74ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 2.0ms | Allocations: 12942)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:04:12 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"3", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (1.1ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 3], ["updated_at", "2023-03-23 17:04:12.464644"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (2.46ms)
+Completed 200 OK in 57ms (Views: 6.5ms | ActiveRecord: 17.8ms | Allocations: 25783)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:04:24 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (1.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.9ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.74ms)
+Completed 200 OK in 53ms (Views: 37.1ms | ActiveRecord: 4.5ms | Allocations: 8763)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:04:24 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1238)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:04:25 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.73ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 1.9ms | Allocations: 12935)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:04:45 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.16ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 2.1ms | Allocations: 12943)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:04:52 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"4", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.5ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 4], ["updated_at", "2023-03-23 17:04:52.316008"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 24ms (Views: 2.8ms | ActiveRecord: 11.3ms | Allocations: 5115)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:04:56 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.28ms)
+Completed 200 OK in 69ms (Views: 49.7ms | ActiveRecord: 10.5ms | Allocations: 28577)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:04:56 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1240)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:04:56 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.11ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 1.7ms | Allocations: 12927)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:04:59 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"5", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.9ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 5], ["updated_at", "2023-03-23 17:04:59.740881"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 17ms (Views: 2.6ms | ActiveRecord: 3.6ms | Allocations: 5355)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:06:14 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.08ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 2.0ms | Allocations: 12935)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:06:18 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.9ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.6ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.06ms)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 3.5ms | Allocations: 8960)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:06:18 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 1496)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:06:18 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.58ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 2.2ms | Allocations: 12934)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:06:22 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"4", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.5ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 4], ["updated_at", "2023-03-23 17:06:22.672799"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 24ms (Views: 2.8ms | ActiveRecord: 11.2ms | Allocations: 5113)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:06:52 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.89ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 2.3ms | Allocations: 12929)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:07:02 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.39ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 1.5ms | Allocations: 12929)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:07:06 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.92ms)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 2.3ms | Allocations: 8649)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:07:06 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1240)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:07:06 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.7ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.05ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 2.2ms | Allocations: 12933)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:07:09 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"2", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.5ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 2], ["updated_at", "2023-03-23 17:07:09.487336"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 23ms (Views: 2.4ms | ActiveRecord: 11.3ms | Allocations: 5120)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:08:00 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.56ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.5ms | Allocations: 12927)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:08:03 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (2.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.25ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 4.1ms | Allocations: 12929)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:08:05 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.39ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 1.8ms | Allocations: 12931)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:08:57 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.6ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 1.6ms | Allocations: 12938)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:08:59 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.08ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 2.6ms | Allocations: 8651)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:08:59 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1243)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:08:59 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.64ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 2.0ms | Allocations: 12937)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:09:03 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"3", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.6ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 3], ["updated_at", "2023-03-23 17:09:03.814289"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.92ms)
+Completed 200 OK in 27ms (Views: 3.4ms | ActiveRecord: 11.2ms | Allocations: 5905)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:09:57 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.11ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 1.6ms | Allocations: 12943)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:09:58 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.35ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 1.8ms | Allocations: 12931)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:13:17 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.79ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 2.1ms | Allocations: 12935)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:13:44 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.42ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 1.7ms | Allocations: 12933)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:13:55 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.25ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 2.3ms | Allocations: 12933)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:14:01 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.63ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 3.9ms | Allocations: 8647)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:14:01 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 4.0ms | Allocations: 4223)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:14:02 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.26ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 1.5ms | Allocations: 12937)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:14:17 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.59ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 1.7ms | Allocations: 12935)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:14:19 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.38ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 2.2ms | Allocations: 8645)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:14:20 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1255)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:14:20 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (39.12ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 1.9ms | Allocations: 12942)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:19:18 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.01ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.8ms | Allocations: 12935)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:19:38 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.8ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.71ms)
+Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 6.7ms | Allocations: 15990)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:19:42 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"4", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.6ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 4], ["updated_at", "2023-03-23 17:19:42.505718"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (1.32ms)
+Completed 200 OK in 19ms (Views: 3.5ms | ActiveRecord: 4.2ms | Allocations: 5189)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:04 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.24ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 7.0ms | Allocations: 15973)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:06 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.28ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 1.7ms | Allocations: 12928)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:10 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.8ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.13ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 2.0ms | Allocations: 12935)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:13 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.17ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 1.7ms | Allocations: 12943)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:34 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (36.37ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 8.0ms | Allocations: 15966)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:20:38 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.48ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 2.4ms | Allocations: 8649)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:20:38 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1240)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:38 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.78ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 2.5ms | Allocations: 12933)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:20:41 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"3", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.5ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 3], ["updated_at", "2023-03-23 17:20:41.330526"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 3.4ms | Allocations: 5116)
+
+
+Started GET "/user_special_reviews" for 127.0.0.1 at 2023-03-23 11:20:48 -0600
+Processing by UserSpecialReviewsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews"[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Special Load (0.0ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/user_special_reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.86ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 1.9ms | Allocations: 12932)
+
+
+Started PATCH "/user_special_reviews/13" for 127.0.0.1 at 2023-03-23 11:20:55 -0600
+Processing by UserSpecialReviewsController#update as JSON
+  Parameters: {"id"=>"13", "rating"=>"4", "user_id"=>28, "special_id"=>86}
+  [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:14:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUserSpecialReview Update (0.5ms)[0m  [1m[33mUPDATE "user_special_reviews" SET "rating" = $1, "updated_at" = $2 WHERE "user_special_reviews"."id" = $3[0m  [["rating", 4], ["updated_at", "2023-03-23 17:20:55.823756"], ["id", 13]]
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_special_reviews_controller.rb:15:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSpecialReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.98ms)
+Completed 200 OK in 21ms (Views: 2.6ms | ActiveRecord: 10.6ms | Allocations: 5108)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:21:33 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (4.2ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (34.19ms)
+Completed 200 OK in 42ms (Views: 34.3ms | ActiveRecord: 6.2ms | Allocations: 8653)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:21:34 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1244)
+
+

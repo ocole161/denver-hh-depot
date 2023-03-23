@@ -69,7 +69,6 @@ function SpecialView() {
     }
 
     function changeRating(e) {
-        e.preventDefault()
         if(userRating.user_id === null) {
             const formData = {
                 user_id: user.id,
@@ -93,9 +92,8 @@ function SpecialView() {
                 }
             })
         } else {
-            console.log(userRating)
             setUserRating({...userRating, rating: e.target.value})
-            console.log(userRating)
+            userRating.rating = e.target.value
             fetch(`/user_special_reviews/${userRating.id}`, {
                 method: "PATCH",
                 headers: {
@@ -106,23 +104,19 @@ function SpecialView() {
             })
             .then(r => {
                 if(r.ok) {
-                    r.json().then(    
+                    r.json().then(
                     )
                 } else {
-                    r.json().then(json => setErrors(json.errors))
+                    r.json().then(json => setErrors(json.error))
                 }
             })
         }
-        
-        
-        
-
     }
 
     return (
         <>
         <h1 className="special-view-title">{special.location_name}</h1>
-        <Image fluid thumbnail="true" rounded="true" src={special.location_image} alt={special.location_name} />
+        <Image rounded="true" src={special.location_image} alt={special.location_name} />
         <h3>Happy Hour: {startTimeString} - {endTimeString}</h3>
         <h3>Days: 
             {special.monday ? " Monday" : null}
