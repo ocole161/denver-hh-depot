@@ -4,9 +4,16 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import Login from './Login';
 
 function SignUp() {
     const dispatch = useDispatch();
+
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
+
     const [errors, setErrors] = useState(null)
     const [formData, setFormData] = useState({
         username:'',
@@ -42,7 +49,9 @@ function SignUp() {
                 .then(res => {
                     if(res.ok){
                         res.json().then(
-                            dispatch(login(user))
+                            dispatch(login(user)),
+                            setErrors(null),
+                            closeModal()
                         )
                     } else {
                         res.json().then(json => setErrors(json.error))
@@ -55,19 +64,25 @@ function SignUp() {
     }
 
     return (
-        <Form onSubmit={onSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicUsername">
-            <Form.Label>Username: </Form.Label>
-                <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
-            </Form.Group>
+        <>
+            <Button onClick={() => setOpen(o => !o)}>SignUp</Button>
+                <Popup open={open} closeOnDocumentClick>
+                <h1>Sign Up</h1>
+                <Form onSubmit={onSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Label>Username: </Form.Label>
+                        <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password: </Form.Label>
-                <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
-            </Form.Group>
-            <Button variant="primary" type="submit">Sign Up</Button>
-            {errors ? <Alert variant="warning" >{errors}</Alert> : null}
-        </Form>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password: </Form.Label>
+                        <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
+                    </Form.Group>
+                    <Button variant="primary" type="submit">Sign Up</Button>
+                    {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+                </Form>
+            </Popup>
+        </>
     )
 }
 

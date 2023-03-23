@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../features/userSlice";
+import SignUp from "./SignUp";
+import Login from './Login'
+import Button from "react-bootstrap/esm/Button";
 
 function NavBar() {
     const user = useSelector((state) => state.user);
@@ -21,9 +24,9 @@ function NavBar() {
         <nav>
             <a href="/">Home</a><> </>
             {user.user_type === "admin" ? <a href="/admin">Admin</a> : null} <></>
-            {user.user_type === "visitor" ? <><a href="/login">Login</a><> </>
-            <a href="/signup">Signup</a><></> </>:
-            <button onClick={handleLogout}>Logout</button>}
+            {user.user_type === "visitor" ? <><Login />
+                <SignUp /> </>:
+                <Button onClick={handleLogout}>Logout</Button>}
             <p>Current User: {user.username}</p>
         </nav>
     )
