@@ -1,11 +1,18 @@
 import { useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addSpecial } from "../features/specialsSlice";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 function CreateNewSpecial({ neighborhoods, times }) {
-    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
+
     const [errors, setErrors] = useState(null);
     const [formData, setFormData] = useState({
         location_name: "",
@@ -77,9 +84,9 @@ function CreateNewSpecial({ neighborhoods, times }) {
         .then(r => {
             if(r.ok) {
                 r.json().then(
-                console.log(formData),
-                navigate("/"),
-                window.alert("Happy Hour Special Added!")
+                dispatch(addSpecial(formData)),
+                setErrors(null),
+                closeModal()
                 )
             } else {
                 r.json().then(json => setErrors(json.error))
@@ -88,6 +95,10 @@ function CreateNewSpecial({ neighborhoods, times }) {
     }
 
     return (
+        <>
+        <Button onClick={() => setOpen(o => !o)}>Create New Special</Button>
+        <Popup open={open} closeOnDocumentClick>
+            <h1>New Special Submission</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group >
                 <Form.Label>Location Name</Form.Label>
@@ -159,6 +170,8 @@ function CreateNewSpecial({ neighborhoods, times }) {
             </Button>
             {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         </Form>
+        </Popup>
+        </>
     )
 }
 

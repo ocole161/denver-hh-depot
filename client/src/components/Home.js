@@ -1,9 +1,9 @@
 import SpecialCardList from "./SpecialCardList"
 
-function Home() {
+function Home({ neighborhoods, times }) {
     return (
         <>
-        <SpecialCardList />
+        <SpecialCardList neighborhoods={neighborhoods} times={times}/>
         </>
     )
 }

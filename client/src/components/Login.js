@@ -6,8 +6,6 @@ import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import SignUp from './SignUp';
-
 
 function Login() {
     const dispatch = useDispatch();

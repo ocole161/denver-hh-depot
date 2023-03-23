@@ -108,7 +108,7 @@ function App() {
       <NavBar />
       {errors ? <Alert variant="warning" >{errors}</Alert> : null}
       <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home neighborhoods={neighborhoods} times={times} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/admin" element={<Admin onUpdateSpecial={updateSpecial}/>} />

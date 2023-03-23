@@ -3,13 +3,14 @@ import { useSelector } from "react-redux"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import MapAll from "./MapAll";
+import CreateNewSpecial from "./CreateNewSpecial";
 
-function SpecialCardList() {
+function SpecialCardList({neighborhoods, times}) {
     const specials = useSelector((state) => state.specials);
 
     return (
         <>
-        <a href="/specials/create">Submit New Special</a>
+        <CreateNewSpecial neighborhoods={neighborhoods} times={times} />
         <Container>
             <Row>
                 {specials.map(special => {
