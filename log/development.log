@@ -40048,3 +40048,844 @@ Processing by UsersController#show as */*
 Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1244)
 
 
+Started GET "/" for ::1 at 2023-03-23 11:50:27 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ocole/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ocole/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.3ms | Allocations: 660)
+Completed 200 OK in 41ms (Views: 15.7ms | Allocations: 5280)
+
+
+Started GET "/specials" for ::1 at 2023-03-23 11:50:33 -0600
+Processing by SpecialsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.6ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.2ms)
+Completed 200 OK in 83ms (Views: 57.0ms | ActiveRecord: 8.2ms | Allocations: 30136)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-23 11:50:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/roaster_average/85" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+Started GET "/roaster_average/84" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+Started GET "/roaster_average/88" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+Started GET "/roaster_average/86" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/85"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/88"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/84"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/86"):
+  
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+Started GET "/roaster_average/87" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/87"):
+  
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.8ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 11:59:59 -0600
+Processing by UsersController#show as */*
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.26ms)
+Completed 200 OK in 124ms (Views: 85.1ms | ActiveRecord: 7.6ms | Allocations: 30196)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.22ms)
+Completed 200 OK in 57ms (Views: 7.3ms | ActiveRecord: 5.7ms | Allocations: 9744)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+Processing by UsersController#show as */*
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 1492)
+
+
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.7ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.21ms)
+Completed 200 OK in 167ms (Views: 115.7ms | ActiveRecord: 9.7ms | Allocations: 30276)
+
+
+Started GET "/roaster_average/84" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/84"):
+  
+Started GET "/roaster_average/88" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/88"):
+  
+Started GET "/roaster_average/85" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+Started GET "/roaster_average/86" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+Started GET "/roaster_average/87" for 127.0.0.1 at 2023-03-23 12:00:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/85"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/86"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/roaster_average/87"):
+  
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:00:43 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1822)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 1794)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1794)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Completed 500 Internal Server Error in 5ms (Allocations: 1819)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.7ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.6ms)
+Completed 200 OK in 56ms (Views: 39.8ms | ActiveRecord: 6.2ms | Allocations: 30172)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 12:00:44 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1233)
+
+
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 12:00:47 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.8ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.3ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.02ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 3.1ms | Allocations: 8645)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 12:00:47 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1236)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:00:47 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:00:47 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:00:47 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:00:48 -0600
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:00:48 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+  
+NameError (uninitialized constant SpecialsController::Roaster):
+  
+app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/specials" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Processing by SpecialsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" ORDER BY "specials"."location_name" ASC[0m
+  ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.5ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.7ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.4ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUserSpecialReview Load (0.8ms)[0m  [1m[34mSELECT "user_special_reviews".* FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+[active_model_serializers]   ↳ app/controllers/specials_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.8ms)
+Completed 200 OK in 108ms (Views: 75.5ms | ActiveRecord: 21.7ms | Allocations: 28840)
+
+
+Started GET "/authorized" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 1500)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (1.0ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.53ms)
+Completed 200 OK in 37ms (Views: 11.9ms | ActiveRecord: 2.0ms | Allocations: 2347)
+
+
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:01:12 -0600
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 1.3ms | Allocations: 1864)
+
+
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:01:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 1870)
+
+
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 57ms (Views: 17.6ms | ActiveRecord: 7.3ms | Allocations: 19884)
+
+
+Processing by SpecialsController#average_rating as */*
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  Parameters: {"id"=>"87"}
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mSpecial Load (0.9ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.8ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.06ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.02ms)
+Completed 200 OK in 75ms (Views: 20.3ms | ActiveRecord: 10.0ms | Allocations: 25030)
+
+
+Completed 200 OK in 74ms (Views: 17.5ms | ActiveRecord: 28.6ms | Allocations: 25004)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:01:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 1.2ms | Allocations: 1882)
+
+
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:01:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.6ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.07ms)
+Completed 200 OK in 12ms (Views: 2.8ms | ActiveRecord: 1.5ms | Allocations: 1872)
+
+
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:01:13 -0600
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:01:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.06ms)
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 1.3ms | Allocations: 1867)
+
+
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.2ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.06ms)
+Completed 200 OK in 54ms (Views: 13.2ms | ActiveRecord: 9.1ms | Allocations: 20089)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.6ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.12ms)
+Completed 200 OK in 16ms (Views: 4.5ms | ActiveRecord: 1.7ms | Allocations: 1862)
+
+
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.07ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1863)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 1863)
+
+
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.7ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 19ms (Views: 3.5ms | ActiveRecord: 2.2ms | Allocations: 1861)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.11ms)
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 1.6ms | Allocations: 1860)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.08ms)
+Completed 200 OK in 19ms (Views: 7.0ms | ActiveRecord: 1.2ms | Allocations: 1864)
+
+
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 1860)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.09ms)
+Completed 200 OK in 9ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 1856)
+
+
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.24ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 1.1ms | Allocations: 1873)
+
+
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:13 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.13ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 1.3ms | Allocations: 1863)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:21 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1870)
+
+
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:21 -0600
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:21 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.1ms)
+Completed 200 OK in 9ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 1871)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 1.5ms | Allocations: 1880)
+
+
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:21 -0600
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:21 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.12ms)
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 1.3ms | Allocations: 1867)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 1.2ms | Allocations: 1867)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:32 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.07ms)
+Completed 200 OK in 16ms (Views: 4.4ms | ActiveRecord: 1.2ms | Allocations: 1864)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:33 -0600
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:33 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.2ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  [1m[36mUserSpecialReview Average (0.2ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1864)
+
+
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 1865)
+
+
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:33 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.06ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1861)
+
+
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:33 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  [1m[36mSpecial Load (0.5ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.5ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.08ms)
+Completed 200 OK in 18ms (Views: 5.5ms | ActiveRecord: 1.5ms | Allocations: 1862)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:35 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 1864)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:35 -0600
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:35 -0600
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:35 -0600
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:35 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"85"}
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.2ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.2ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.05ms)
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1864)
+
+
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 1861)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.3ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 1864)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.07ms)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 0.9ms | Allocations: 1861)
+
+
+Started GET "/special_average/84" for 127.0.0.1 at 2023-03-23 12:02:58 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"84"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 84]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.06ms)
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 1.0ms | Allocations: 1872)
+
+
+Started GET "/special_average/86" for 127.0.0.1 at 2023-03-23 12:02:59 -0600
+Started GET "/special_average/88" for 127.0.0.1 at 2023-03-23 12:02:59 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"86"}
+  [1m[36mSpecial Load (0.3ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Started GET "/special_average/85" for 127.0.0.1 at 2023-03-23 12:02:59 -0600
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"88"}
+  [1m[36mUserSpecialReview Average (0.3ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 86]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mSpecial Load (2.8ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+Processing by SpecialsController#average_rating as */*
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+  Parameters: {"id"=>"85"}
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 1882)
+
+
+Started GET "/special_average/87" for 127.0.0.1 at 2023-03-23 12:02:59 -0600
+  [1m[36mUserSpecialReview Average (3.0ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 88]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+Processing by SpecialsController#average_rating as */*
+  Parameters: {"id"=>"87"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mSpecial Load (0.4ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+Completed 200 OK in 17ms (Views: 4.3ms | ActiveRecord: 6.1ms | Allocations: 3460)
+
+
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 87]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.04ms)
+Completed 200 OK in 12ms (Views: 3.3ms | ActiveRecord: 1.1ms | Allocations: 1869)
+
+
+  [1m[36mSpecial Load (0.6ms)[0m  [1m[34mSELECT "specials".* FROM "specials" WHERE "specials"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUserSpecialReview Average (0.4ms)[0m  [1m[34mSELECT AVG("user_special_reviews"."rating") FROM "user_special_reviews" WHERE "user_special_reviews"."special_id" = $1[0m  [["special_id", 85]]
+  ↳ app/controllers/specials_controller.rb:31:in `average_rating'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Integer (0.07ms)
+Completed 200 OK in 31ms (Views: 3.3ms | ActiveRecord: 10.6ms | Allocations: 6390)
+
+

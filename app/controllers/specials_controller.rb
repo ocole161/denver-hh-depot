@@ -27,6 +27,10 @@ class SpecialsController < ApplicationController
         head :no_content
     end
 
+    def average_rating
+        render json: Special.find(params[:id]).user_special_reviews.average(:rating).to_i
+    end
+
     private
 
     def special_params

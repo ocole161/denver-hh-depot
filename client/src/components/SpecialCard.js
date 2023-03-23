@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
@@ -9,6 +10,14 @@ function SpecialCard({ special }) {
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
 
+    const [ averageRating, setAverageRating ] = useState(null)
+    
+    useEffect(() => {
+        fetch(`/special_average/${special.id}`)
+        .then(r => r.json())
+        .then(r => setAverageRating(r))
+    })
+
     return (
         <Col>
             <Link to={`/specials/${special.id}`} className="no-format-link">
@@ -16,12 +25,14 @@ function SpecialCard({ special }) {
                     <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
                     <Card.Body>
                         <Card.Title>{special.location_name}</Card.Title>
-                        <Card.Text>{startTimeString} - {endTimeString}</Card.Text>
+                        <Card.Text>Happy Hour: {startTimeString} - {endTimeString}</Card.Text>
                         <Card.Text>Deals on: 
                             {special.beer ? " Beer" : null} 
                             {special.wine ? " Wine" : null} 
                             {special.cocktails ? " Cocktails" :null} 
-                            {special.food ? " Food" : null}</Card.Text>
+                            {special.food ? " Food" : null}
+                        </Card.Text>
+                        <Card.Text>Average User Rating: {averageRating ? averageRating : "No Ratings"} </Card.Text>
                     </Card.Body>
                 </Card>
             </Link>

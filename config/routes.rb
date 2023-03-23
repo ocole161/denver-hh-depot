@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/authorized', to: 'users#show'
 
+  get '/special_average/:id', to: 'specials#average_rating'
+
   get '*path', to: 'fallback#index', constraints: ->(req) { !req.xhr? && req.format.html? }
 end
