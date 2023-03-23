@@ -7,7 +7,7 @@ class UserSpecialReviewsController < ApplicationController
     
     def create
         review = UserSpecialReview.create!(review_params)
-        render json: favorite, status: :created
+        render json: review, status: :created
     end
 
     def update
@@ -25,6 +25,6 @@ class UserSpecialReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:special_id, :user_id, :rating)
+        params.permit(:id, :special_id, :user_id, :rating)
     end
 end

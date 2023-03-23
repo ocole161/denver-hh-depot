@@ -22,14 +22,26 @@ function SpecialView() {
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
     
     const [errors, setErrors] = useState(null);
-    const [userRating, setUserRating] = useState(null);
+    const [userRating, setUserRating] = useState({
+        rating: "",
+        user_id: null,
+        special_id: null,
+    });
 
 
     useEffect(() => {
         fetch("/user_special_reviews")
         .then(res => res.json())
         .then(reviews => {
-            setUserRating(reviews.find(review => review.user.id === user.id && review.special.id === parseInt([id])))
+            const userReview = reviews.find(review => review.user.id === user.id && review.special.id === parseInt([id]))
+            if (userReview) {
+                setUserRating({
+                    id: userReview.id,
+                    rating: userReview.rating,
+                    user_id: userReview.user.id,
+                    special_id: userReview.special.id
+                    }
+                )}
         })
     }, [id, user.id])
     
@@ -57,7 +69,8 @@ function SpecialView() {
     }
 
     function changeRating(e) {
-        if(!userRating) {
+        e.preventDefault()
+        if(userRating.user_id === null) {
             const formData = {
                 user_id: user.id,
                 special_id: id,
@@ -76,26 +89,27 @@ function SpecialView() {
                     setUserRating(formData)
                     )
                 } else {
-                    r.json().then(json => setErrors(json.error))
+                    r.json().then(json => setErrors(json.errors))
                 }
             })
         } else {
-            const formData = ({...userRating, rating: e.target.value})
+            console.log(userRating)
+            setUserRating({...userRating, rating: e.target.value})
+            console.log(userRating)
             fetch(`/user_special_reviews/${userRating.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(userRating)
             })
             .then(r => {
                 if(r.ok) {
-                    r.json().then(
-                    setUserRating(formData)    
+                    r.json().then(    
                     )
                 } else {
-                    r.json().then(json => setErrors(json.error))
+                    r.json().then(json => setErrors(json.errors))
                 }
             })
         }

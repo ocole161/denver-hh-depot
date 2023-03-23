@@ -33,17 +33,22 @@ function CreateNewSpecial({ neighborhoods, times }) {
     })
     const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
-    function geocodeAddress() {
+    const geocodeAddress = () => {
+        let latitude;
+        let longitude;
         const address = formData.location_address;
-      
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
-        .then((response) => {
-            return response.json();
-        }).then(jsonData => {
-            setFormData({...formData, lat: jsonData.results[0].geometry.location.lat, lng: jsonData.results[0].geometry.location.lng});
+        .then((r) => r.json())
+        .then(data => {
+            latitude = data.results[0].geometry.location.lat;
+            longitude = data.results[0].geometry.location.lng;
+            console.log(latitude, longitude);
+            console.log(formData.location_name)
+            formData.lat = latitude
+            formData.lng = longitude
         })
-        .catch(error => {
-            setErrors(error);
+        .catch(errors => {
+            setErrors(errors);
         })
       }
     
@@ -60,7 +65,8 @@ function CreateNewSpecial({ neighborhoods, times }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        geocodeAddress()
+        geocodeAddress();
+        console.log(formData)
         fetch("/specials", {
             method: "POST",
             headers: {
@@ -71,6 +77,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
         .then(r => {
             if(r.ok) {
                 r.json().then(
+                console.log(formData),
                 navigate("/"),
                 window.alert("Happy Hour Special Added!")
                 )

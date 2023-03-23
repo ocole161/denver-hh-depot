@@ -29,7 +29,7 @@ function Admin({ onUpdateSpecial }) {
         return <SpecialCardReview key={special.id} special={special} onUpdateSpecial={onUpdateSpecial}/>
         }) : null }
         {(show === "showDeleted") ? deleteRequests.map(special => {
-        return <SpecialCardDelete key={special.id} special={special} deleteSpecial={deleteSpecial} />
+        return <SpecialCardDelete key={special.id} special={special} deleteSpecial={deleteSpecial} onUpdateSpecial={onUpdateSpecial}/>
         }) : null }
         </>
     )

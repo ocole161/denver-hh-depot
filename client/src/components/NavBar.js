@@ -20,7 +20,7 @@ function NavBar() {
     return(
         <nav>
             <a href="/">Home</a><> </>
-            <a href="/admin">Admin</a><> </>
+            {user.user_type === "admin" ? <a href="/admin">Admin</a> : null} <></>
             {user.user_type === "visitor" ? <><a href="/login">Login</a><> </>
             <a href="/signup">Signup</a><></> </>:
             <button onClick={handleLogout}>Logout</button>}
