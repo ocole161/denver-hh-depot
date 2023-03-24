@@ -7,7 +7,6 @@ import Button from "react-bootstrap/esm/Button";
 function NavBar() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    console.log(user)
 
     const handleLogout = () => {
         fetch('/logout',{

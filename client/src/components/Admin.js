@@ -3,9 +3,8 @@ import Button from "react-bootstrap/esm/Button";
 import SpecialCardReview from "./SpecialCardReview";
 import SpecialCardDelete from "./SpecialCardDelete";
 import { useState } from "react";
-import { removeSpecial } from "../features/specialsSlice";
 
-function Admin({ onUpdateSpecial }) {
+function Admin() {
     const dispatch = useDispatch();
     const specials = useSelector((state) => state.specials);
     const [show, setShow] = useState("showNew");
@@ -13,9 +12,7 @@ function Admin({ onUpdateSpecial }) {
     const updatedSpecials = specials.filter(special => special.needs_update_review)
     const deleteRequests = specials.filter(special => special.needs_delete_review)
     
-    function deleteSpecial(special) {
-        dispatch(removeSpecial(special))
-    }
+
 
     return (
         <>
@@ -23,14 +20,14 @@ function Admin({ onUpdateSpecial }) {
         <Button onClick={() => setShow("showChanges")}>Changes</Button>
         <Button onClick={() => setShow("showDeleted")}>Delete Requests</Button>
         {(show === "showNew") ? newSpecials.map(special => {
-        return <SpecialCardReview key={special.id} special={special} onUpdateSpecial={onUpdateSpecial}/>
-        }) : null }
+            return <SpecialCardReview key={special.id} special={special} />
+            }) : null }
         {(show === "showChanges") ? updatedSpecials.map(special => {
-        return <SpecialCardReview key={special.id} special={special} onUpdateSpecial={onUpdateSpecial}/>
-        }) : null }
+            return <SpecialCardReview key={special.id} special={special} />
+            }) : null }
         {(show === "showDeleted") ? deleteRequests.map(special => {
-        return <SpecialCardDelete key={special.id} special={special} deleteSpecial={deleteSpecial} onUpdateSpecial={onUpdateSpecial}/>
-        }) : null }
+            return <SpecialCardDelete key={special.id} special={special} />
+            }) : null }
         </>
     )
 }

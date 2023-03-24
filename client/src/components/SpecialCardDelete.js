@@ -1,17 +1,21 @@
+import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { removeSpecial } from '../features/specialsSlice';
+import { updateSpecial } from '../features/specialsSlice';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/esm/Button';
-import { Link } from 'react-router-dom';
-import { useState } from "react"
 import Alert from 'react-bootstrap/esm/Alert';
 
-
-function SpecialCardDelete({ special, onUpdateSpecial, deleteSpecial }) {
+function SpecialCardDelete({ special }) {
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
     const [errors, setErrors] = useState(null);
+
+    const dispatch = useDispatch();
 
     function setIgnored(e) {
         e.preventDefault();
@@ -25,12 +29,15 @@ function SpecialCardDelete({ special, onUpdateSpecial, deleteSpecial }) {
         })
         .then(r => {
             if(r.ok) {
-                r.json().then((udpatedSpecial) => {
-                onUpdateSpecial(udpatedSpecial)
+                r.json().then((special) => {
+                    dispatch(updateSpecial(special))
                 })
             } else {
                 r.json().then(json => setErrors(json.error))
             }
+        })
+        .catch(errors => {
+            setErrors(errors);
         })
     }
 
@@ -40,8 +47,14 @@ function SpecialCardDelete({ special, onUpdateSpecial, deleteSpecial }) {
             fetch(`specials/${special.id}`, {
                 method: "DELETE",
             })
-            .then(deleteSpecial(special))
-            }
+            .then(
+                console.log(special),
+                dispatch(removeSpecial(special))
+            )
+            .catch(errors => {
+                setErrors(errors);
+            })
+        }
     }
 
     return (

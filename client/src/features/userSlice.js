@@ -9,7 +9,6 @@ const userSlice = createSlice({
     },
     reducers: {
         login(state, action) {
-            console.log(action.payload)
                 return {
                     username: action.payload.username,
                     user_type: action.payload.user_type,

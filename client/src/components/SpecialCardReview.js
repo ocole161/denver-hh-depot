@@ -1,10 +1,13 @@
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/esm/Button';
 import { Link } from 'react-router-dom';
 import { useState } from "react"
+import { useDispatch } from 'react-redux';
+import { updateSpecial } from '../features/specialsSlice';
 import Alert from 'react-bootstrap/esm/Alert';
+import Button from 'react-bootstrap/esm/Button';
+import Card from 'react-bootstrap/Card';
 
-function SpecialCardReview({ special, onUpdateSpecial }) {
+function SpecialCardReview({ special }) {
+    const dispatch = useDispatch()
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
@@ -25,7 +28,7 @@ function SpecialCardReview({ special, onUpdateSpecial }) {
         .then(r => {
             if(r.ok) {
                 r.json().then((udpatedSpecial) => {
-                onUpdateSpecial(udpatedSpecial)
+                dispatch(updateSpecial(udpatedSpecial))
                 })
             } else {
                 r.json().then(json => setErrors(json.error))

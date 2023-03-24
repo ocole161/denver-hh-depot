@@ -12,13 +12,24 @@ const specialsSlice = createSlice({
             return [...state, action.payload]
         },
 
+        updateSpecial(state, action) {
+            const updatedSpecials = state.map((special) => {
+                if (special.id === action.payload.id) {
+                  return action.payload }
+                else {
+                  return special }
+            })
+            return updatedSpecials
+        },
+
         removeSpecial (state, action) {
-            return state.filter((special) => special.id !== action.payload)
+            console.log(current(state), action.payload)
+            return state.filter((special) => special.id !== action.payload.id)
         }
     }
 })
 
-export const { setSpecials, addSpecial, removeSpecial } = specialsSlice.actions;
+export const { setSpecials, addSpecial, updateSpecial, removeSpecial } = specialsSlice.actions;
 export default specialsSlice.reducer;
 
 

@@ -2,16 +2,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/esm/Button';
 import Alert from 'react-bootstrap/esm/Alert';
 import { useState } from "react"
-// import { useParams, useNavigate } from 'react-router-dom';
-// import { useSelector } from "react-redux"
+import { useDispatch } from 'react-redux';
+import { updateSpecial } from '../features/specialsSlice';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
-function SpecialEdit({ neighborhoods, times, onUpdateSpecial, special }) {
-    // const specials = useSelector((state) => state.specials);
-    // const { id } = useParams()
-    // const special = specials.find((special) => special.id === parseInt(id))
-    // const navigate = useNavigate();
+function SpecialEdit({ neighborhoods, times, special }) {
+    const dispatch = useDispatch()
 
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
@@ -47,6 +44,26 @@ function SpecialEdit({ neighborhoods, times, onUpdateSpecial, special }) {
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
     
+    const originalAddress = special.location_address
+
+    const geocodeAddress = () => {
+        console.log('Geocoding')
+        console.log(originalAddress, special.location_address, formData.location_address)
+        const address = formData.location_address;
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
+        .then((r) => r.json())
+        .then(data => {
+            const latitude = data.results[0].geometry.location.lat;
+            const longitude = data.results[0].geometry.location.lng;
+            console.log(latitude, longitude);
+            console.log(formData.location_name)
+            formData.lat = latitude
+            formData.lng = longitude
+        })
+        .catch(errors => {
+            setErrors(errors);
+        })
+    }
     
     function handleChange(e) {
         e.preventDefault()
@@ -61,6 +78,8 @@ function SpecialEdit({ neighborhoods, times, onUpdateSpecial, special }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (originalAddress !== formData.location_address) {
+            geocodeAddress()}
         fetch(`/specials/${special.id}`, {
             method: "PATCH",
             headers: {
@@ -72,7 +91,7 @@ function SpecialEdit({ neighborhoods, times, onUpdateSpecial, special }) {
         .then(r => {
             if(r.ok) {
                 r.json().then(udpatedSpecial => {
-                onUpdateSpecial(udpatedSpecial)
+                dispatch(updateSpecial(udpatedSpecial))
                 closeModal()
                 })
             } else {

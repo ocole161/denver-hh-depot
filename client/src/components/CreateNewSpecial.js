@@ -59,7 +59,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
         .catch(errors => {
             setErrors(errors);
         })
-      }
+    }
     
     function handleChange(e) {
         e.preventDefault()
