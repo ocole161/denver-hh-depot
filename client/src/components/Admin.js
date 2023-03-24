@@ -1,11 +1,12 @@
-import { useSelector, useDispatch } from "react-redux"
-import Button from "react-bootstrap/esm/Button";
+import { useSelector } from "react-redux"
 import SpecialCardReview from "./SpecialCardReview";
 import SpecialCardDelete from "./SpecialCardDelete";
 import { useState } from "react";
+import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/esm/Row";
+import Button from "react-bootstrap/esm/Button";
 
 function Admin() {
-    const dispatch = useDispatch();
     const specials = useSelector((state) => state.specials);
     const [show, setShow] = useState("showNew");
     const newSpecials = specials.filter(special => special.needs_create_review)
@@ -19,15 +20,34 @@ function Admin() {
         <Button onClick={() => setShow("showNew")}>New Submissions</Button>
         <Button onClick={() => setShow("showChanges")}>Changes</Button>
         <Button onClick={() => setShow("showDeleted")}>Delete Requests</Button>
-        {(show === "showNew") ? newSpecials.map(special => {
-            return <SpecialCardReview key={special.id} special={special} />
-            }) : null }
-        {(show === "showChanges") ? updatedSpecials.map(special => {
-            return <SpecialCardReview key={special.id} special={special} />
-            }) : null }
-        {(show === "showDeleted") ? deleteRequests.map(special => {
-            return <SpecialCardDelete key={special.id} special={special} />
-            }) : null }
+
+                {(show === "showNew") ? 
+                    <Container>
+                        <Row>
+                            {newSpecials.map(special => {
+                                return <SpecialCardReview key={special.id} special={special} />
+                            })}
+                        </Row>
+                    </Container>
+                    : null }
+                {(show === "showChanges") ? 
+                    <Container>
+                        <Row>
+                            {updatedSpecials.map(special => {
+                                return <SpecialCardReview key={special.id} special={special} />
+                            })}
+                        </Row>
+                    </Container>
+                    : null }
+                {(show === "showDeleted") ? 
+                    <Container>
+                        <Row>
+                            {deleteRequests.map(special => {
+                                return <SpecialCardDelete key={special.id} special={special} />
+                            })}
+                        </Row>
+                    </Container>
+                    : null }
         </>
     )
 }

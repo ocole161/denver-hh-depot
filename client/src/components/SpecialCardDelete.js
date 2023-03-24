@@ -6,6 +6,7 @@ import { updateSpecial } from '../features/specialsSlice';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/esm/Button';
 import Alert from 'react-bootstrap/esm/Alert';
+import Col from 'react-bootstrap/esm/Col';
 
 function SpecialCardDelete({ special }) {
     const startTime = new Date(special.start_time);
@@ -58,23 +59,25 @@ function SpecialCardDelete({ special }) {
     }
 
     return (
-        <Link to={`/specials/${special.id}`} className="no-format-link">
-        <Card style={{ width: '18rem' }} >
-            <Card.Img variant="top" src={special.location_image} alt={special.location_name} />
-            <Card.Body>
-                <Card.Title>{special.location_name}</Card.Title>
-                <Card.Text>{startTimeString} - {endTimeString}</Card.Text>
-                <Card.Text>Deals on: 
-                    {special.beer ? " Beer" : null} 
-                    {special.wine ? " Wine" : null} 
-                    {special.cocktails ? " Cocktails" :null} 
-                    {special.food ? " Food" : null}</Card.Text>
-            </Card.Body>
-            <Button onClick={setDeleted}>Confirm Deletion</Button>
-            <Button onClick={setIgnored}>Ignore Request</Button>
-            {errors ? <Alert variant="warning" >{errors}</Alert> : null}
-        </Card>
-        </Link>
+        <Col>
+            <Link to={`/specials/${special.id}`} className="no-format-link">
+            <Card style={{ width: '18rem' }} >
+                <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
+                <Card.Body>
+                    <Card.Title>{special.location_name}</Card.Title>
+                    <Card.Text>{startTimeString} - {endTimeString}</Card.Text>
+                    <Card.Text>Deals on: 
+                        {special.beer ? " Beer" : null} 
+                        {special.wine ? " Wine" : null} 
+                        {special.cocktails ? " Cocktails" :null} 
+                        {special.food ? " Food" : null}</Card.Text>
+                </Card.Body>
+                <Button onClick={setDeleted}>Confirm Deletion</Button>
+                <Button onClick={setIgnored}>Ignore Request</Button>
+                {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+            </Card>
+            </Link>
+        </Col>
     )
 }
 

@@ -5,6 +5,7 @@ import { updateSpecial } from '../features/specialsSlice';
 import Alert from 'react-bootstrap/esm/Alert';
 import Button from 'react-bootstrap/esm/Button';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/esm/Col';
 
 function SpecialCardReview({ special }) {
     const dispatch = useDispatch()
@@ -37,22 +38,24 @@ function SpecialCardReview({ special }) {
     }
 
     return (
-        <Link to={`/specials/${special.id}`} className="no-format-link">
-        <Card style={{ width: '18rem' }} >
-            <Card.Img variant="top" src={special.location_image} alt={special.location_name} />
-            <Card.Body>
-                <Card.Title>{special.location_name}</Card.Title>
-                <Card.Text>{startTimeString} - {endTimeString}</Card.Text>
-                <Card.Text>Deals on: 
-                    {special.beer ? " Beer" : null} 
-                    {special.wine ? " Wine" : null} 
-                    {special.cocktails ? " Cocktails" :null} 
-                    {special.food ? " Food" : null}</Card.Text>
-            </Card.Body>
-            <Button onClick={setReviewed}>Mark Reviewed</Button>
-            {errors ? <Alert variant="warning" >{errors}</Alert> : null}
-        </Card>
-        </Link>
+        <Col>
+            <Link to={`/specials/${special.id}`} className="no-format-link">
+            <Card style={{ width: '18rem' }} >
+                <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
+                <Card.Body>
+                    <Card.Title>{special.location_name}</Card.Title>
+                    <Card.Text>{startTimeString} - {endTimeString}</Card.Text>
+                    <Card.Text>Deals on: 
+                        {special.beer ? " Beer" : null} 
+                        {special.wine ? " Wine" : null} 
+                        {special.cocktails ? " Cocktails" :null} 
+                        {special.food ? " Food" : null}</Card.Text>
+                </Card.Body>
+                <Button onClick={setReviewed}>Mark Reviewed</Button>
+                {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+            </Card>
+            </Link>
+        </Col>
     )
 }
 
