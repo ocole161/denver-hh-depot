@@ -93,7 +93,10 @@ function CreateNewSpecial({ neighborhoods, times }) {
                     navigate(`/specials/${json.id}`)
             })
             } else {
-                r.json().then(json => setErrors(json.errors))
+                r.json().then(json => {
+                    setErrors(json.error)
+                    console.log(json)
+                })
             }
         })
     }
@@ -101,7 +104,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
     return (
         <>
         <Button onClick={() => setOpen(o => !o)}>Create New Special</Button>
-        <Popup open={open} closeOnDocumentClick>
+        <Popup open={open} closeOnDocumentClick onClose={closeModal}>
             <h1>New Special Submission</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group >

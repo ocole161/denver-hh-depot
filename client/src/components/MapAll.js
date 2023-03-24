@@ -2,12 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
-
-
 function MapAll({ specials }) {
   const containerStyle = {
-    width: '400px',
-    height: '400px'
+    width: '100%',
+    height: '600px'
   };
 
   const center = {
@@ -38,7 +36,7 @@ function MapAll({ specials }) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={userPosition ? userPosition : center}
-        zoom={14}
+        zoom={15}
       >
         {specials.map(special => {
           return (

@@ -65,7 +65,7 @@ function SignUp() {
     return (
         <>
             <Button onClick={() => setOpen(o => !o)}>SignUp</Button>
-                <Popup open={open} closeOnDocumentClick>
+                <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                 <h1>Sign Up</h1>
                 <Form onSubmit={onSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicUsername">

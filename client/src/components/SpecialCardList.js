@@ -1,24 +1,30 @@
 import SpecialCard from "./SpecialCard"
 import { useSelector } from "react-redux"
+import { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import MapAll from "./MapAll";
 import CreateNewSpecial from "./CreateNewSpecial";
+import Button from "react-bootstrap/esm/Button";
 
 function SpecialCardList({neighborhoods, times}) {
     const specials = useSelector((state) => state.specials);
-
+    const [showMap, setShowMap] = useState(false)
+    
     return (
         <>
         <CreateNewSpecial neighborhoods={neighborhoods} times={times} />
-        <Container>
-            <Row>
-                {specials.map(special => {
-                return <SpecialCard key={special.id} special={special}/>
-                })}
-            </Row>
-        </Container>
-        <MapAll specials={specials}/>
+        <Button onClick={() => setShowMap(!showMap)}>{showMap ? "Show List" : "Show Map"}</Button>
+        {showMap ? 
+            <MapAll specials={specials}/> :
+            <Container>
+                <Row>
+                    {specials.map(special => {
+                    return <SpecialCard key={special.id} special={special}/>
+                    })}
+                </Row>
+            </Container>
+        }
         </>
     )
 }
