@@ -76,10 +76,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
         setFormData({...formData, [name]: checked})
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (originalAddress !== formData.location_address) {
-            geocodeAddress()}
+    function patchSpecial() {
         fetch(`/specials/${special.id}`, {
             method: "PATCH",
             headers: {
@@ -98,6 +95,19 @@ function SpecialEdit({ neighborhoods, times, special }) {
                 r.json().then(json => setErrors(json.error))
             }
         })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (formData.location_image === "") {
+            formData.location_image = "https://i.pinimg.com/originals/0a/a4/0a/0aa40ab247b227aa9241fac7b28e77fc.jpg"
+        }
+        if (originalAddress !== formData.location_address) {
+            geocodeAddress()
+            // Timeout to wait for geocode to complete
+            setTimeout(() => { patchSpecial() }, 100)
+        }
+        patchSpecial()
     }
 
     return (

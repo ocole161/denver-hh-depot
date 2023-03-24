@@ -90,7 +90,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
                     setUserRating(formData)
                     )
                 } else {
-                    r.json().then(json => setErrors(json.errors))
+                    r.json().then(json => setErrors(json.error))
                 }
             })
         } else {

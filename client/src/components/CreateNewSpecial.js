@@ -43,18 +43,16 @@ function CreateNewSpecial({ neighborhoods, times }) {
     const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
     const geocodeAddress = () => {
-        let latitude;
-        let longitude;
         const address = formData.location_address;
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
         .then((r) => r.json())
         .then(data => {
-            latitude = data.results[0].geometry.location.lat;
-            longitude = data.results[0].geometry.location.lng;
+            const latitude = data.results[0].geometry.location.lat;
+            const longitude = data.results[0].geometry.location.lng;
             console.log(latitude, longitude);
-            console.log(formData.location_name)
             formData.lat = latitude
             formData.lng = longitude
+
         })
         .catch(errors => {
             setErrors(errors);
@@ -75,30 +73,36 @@ function CreateNewSpecial({ neighborhoods, times }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         geocodeAddress();
-        console.log(formData)
-        fetch("/specials", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(r => {
-            if(r.ok) {
-                r.json().then(json => {
-                    console.log(json)
-                    dispatch(addSpecial(json))
-                    setErrors(null)
-                    closeModal()
-                    navigate(`/specials/${json.id}`)
-            })
-            } else {
-                r.json().then(json => {
-                    setErrors(json.error)
-                    console.log(json)
+
+        if (formData.location_image === "") {
+            formData.location_image = "https://i.pinimg.com/originals/0a/a4/0a/0aa40ab247b227aa9241fac7b28e77fc.jpg"
+        }
+        // Timeout to wait for geocode to complete
+        setTimeout(() => {
+            fetch("/specials", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })        
+            .then(r => {
+                if(r.ok) {
+                    r.json().then(json => {
+                        console.log(json)
+                        dispatch(addSpecial(json))
+                        setErrors(null)
+                        closeModal()
+                        navigate(`/specials/${json.id}`)
                 })
-            }
-        })
+                } else {
+                    r.json().then(json => {
+                        setErrors(json.error)
+                        console.log(json)
+                    })
+                }
+            })
+        }, "100");
     }
 
     return (

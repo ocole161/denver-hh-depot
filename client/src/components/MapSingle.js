@@ -19,20 +19,23 @@ function MapSingle({ special }) {
     googleMapsApiKey: `${process.env.REACT_APP_API_KEY}`
   })
 
-
-  return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={15}
-      >
-        <Marker
-          position={center}
-          title={location_name}
-        />
-        <></>
-      </GoogleMap>
-  ) : <></>
+  if (lat && lng) {
+    return isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={15}
+        >
+          <Marker
+            position={center}
+            title={location_name}
+          />
+          <></>
+        </GoogleMap>
+    ) : <></>
+  } else {
+    return null
+  }
 }
 
 export default React.memo(MapSingle)
