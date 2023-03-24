@@ -113,7 +113,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/admin" element={<Admin onUpdateSpecial={updateSpecial}/>} />
-            <Route path="/specials/:id" element={<SpecialView />} />
+            <Route path="/specials/:id" element={<SpecialView neighborhoods={neighborhoods} times={times} onUpdateSpecial={updateSpecial} />} />
             <Route path="/specials/create" element={<CreateNewSpecial neighborhoods={neighborhoods} times={times} />} />
             <Route path="/specials/edit/:id" element={<SpecialEdit neighborhoods={neighborhoods} times={times} onUpdateSpecial={updateSpecial} />} />
       </Routes>

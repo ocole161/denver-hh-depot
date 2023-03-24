@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import SpecialEdit from "./SpecialEdit"
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
@@ -9,7 +10,7 @@ import MapSingle from "./MapSingle"
 import Spinner from "react-bootstrap/esm/Spinner"
 
 
-function SpecialView() {
+function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
     const specials = useSelector((state) => state.specials);
@@ -150,7 +151,7 @@ function SpecialView() {
                 <option value="5">5</option>
             </Form.Select>
         </Form.Group>
-        <Button href={`/specials/edit/${id}`}>Edit</Button>
+        <SpecialEdit special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
         <Button onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         <MapSingle special={special} />

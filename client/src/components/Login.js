@@ -52,22 +52,22 @@ function Login() {
 
     return (
         <>
-            <Button onClick={() => setOpen(o => !o)}>Login</Button>
-            <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-                <h1>Login</h1>
-                <Form onSubmit={onSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicUsername">
-                        <Form.Label>Username: </Form.Label>
-                        <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password: </Form.Label>
-                        <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
-                    </Form.Group>
-                    <Button variant="primary" type="submit">Login</Button>
-                    {errors ? <Alert variant="warning">{errors}</Alert> : null}
-                </Form>
-            </Popup >
+        <Button onClick={() => setOpen(o => !o)}>Login</Button>
+        <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+            <h1>Login</h1>
+            <Form onSubmit={onSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Label>Username: </Form.Label>
+                    <Form.Control type="text" name="username" placeholder="Enter your username" value={username} onChange={handleChange} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password: </Form.Label>
+                    <Form.Control type="password" name="password" placeholder='Password' value={password} onChange={handleChange} required/>
+                </Form.Group>
+                <Button variant="primary" type="submit">Login</Button>
+                {errors ? <Alert variant="warning">{errors}</Alert> : null}
+            </Form>
+        </Popup >
         </>
     )
 }
