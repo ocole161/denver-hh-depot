@@ -1,21 +1,15 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import { useSelector, useDispatch } from "react-redux"
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Admin from './components/Admin';
 import SpecialView from './components/SpecialView';
-import CreateNewSpecial from './components/CreateNewSpecial';
-import SpecialEdit from './components/SpecialEdit';
-import { useDispatch } from 'react-redux';
-import { login } from './features/userSlice';
-import { logout } from './features/userSlice';
+import { login, logout } from './features/userSlice';
 import { setSpecials } from './features/specialsSlice';
-import Alert from 'react-bootstrap/Alert';
-import { useSelector } from "react-redux"
 import Spinner from 'react-bootstrap/Spinner';
+import Alert from 'react-bootstrap/Alert';
 
 function App() {
   const dispatch = useDispatch();
@@ -98,12 +92,8 @@ function App() {
       {errors ? <Alert variant="warning" >{errors}</Alert> : null}
       <Routes>
             <Route path="/" element={<Home neighborhoods={neighborhoods} times={times} />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/specials/:id" element={<SpecialView neighborhoods={neighborhoods} times={times} />} />
-            <Route path="/specials/create" element={<CreateNewSpecial neighborhoods={neighborhoods} times={times} />} />
-            <Route path="/specials/edit/:id" element={<SpecialEdit neighborhoods={neighborhoods} times={times} />} />
       </Routes>
     </BrowserRouter>
   );

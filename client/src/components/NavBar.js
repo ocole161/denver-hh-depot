@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
-import { logout } from "../features/userSlice";
 import SignUp from "./SignUp";
 import Login from './Login'
+import { logout } from "../features/userSlice";
 import Button from "react-bootstrap/esm/Button";
 
 function NavBar() {

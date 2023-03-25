@@ -1,7 +1,4 @@
-import React from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-
-
 
 function MapSingle({ special }) {
   const containerStyle = {
@@ -38,4 +35,4 @@ function MapSingle({ special }) {
   }
 }
 
-export default React.memo(MapSingle)
+export default MapSingle
