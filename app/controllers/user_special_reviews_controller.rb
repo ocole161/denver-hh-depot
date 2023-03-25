@@ -1,5 +1,6 @@
 class UserSpecialReviewsController < ApplicationController
     wrap_parameters format: []
+    before_action :authorized_user, only: [:create, :update]
 
     def index
         render json: UserSpecialReview.all

@@ -34,7 +34,7 @@ function MapSingle({ special }) {
         </GoogleMap>
     ) : <></>
   } else {
-    return null
+    return <></>
   }
 }
 

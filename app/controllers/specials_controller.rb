@@ -1,6 +1,6 @@
 class SpecialsController < ApplicationController
     wrap_parameters format: []
-    before_action :authorized_user, only: [:create, :update, :destroy]
+    before_action :authorized_user, only: [:destroy]
 
     def index
         render json: Special.all.order(location_name: :asc)
@@ -12,6 +12,9 @@ class SpecialsController < ApplicationController
 
     def create
         new_special = Special.create!(special_params)
+        if new_special
+            PostMailer.with(special: new_special).post_created.deliver_now
+        end
         render json: new_special, status: :created
     end
 
