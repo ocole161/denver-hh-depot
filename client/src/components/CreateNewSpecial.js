@@ -12,6 +12,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
+    // States for open/close Popup
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
@@ -42,6 +43,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
     })
     const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
+    // Send the submitted address to GoogleMaps geocoder, set the returned lat and lng in the form
     const geocodeAddress = () => {
         const address = formData.location_address;
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_API_KEY}`)
@@ -49,10 +51,8 @@ function CreateNewSpecial({ neighborhoods, times }) {
         .then(data => {
             const latitude = data.results[0].geometry.location.lat;
             const longitude = data.results[0].geometry.location.lng;
-            console.log(latitude, longitude);
             formData.lat = latitude
             formData.lng = longitude
-
         })
         .catch(errors => {
             setErrors(errors);
@@ -73,7 +73,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         geocodeAddress();
-
+        // Set default image if none specified
         if (formData.location_image === "") {
             formData.location_image = "https://i.pinimg.com/originals/0a/a4/0a/0aa40ab247b227aa9241fac7b28e77fc.jpg"
         }

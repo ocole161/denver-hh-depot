@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 function SpecialCard({ special }) {
+
+    // Take datetimes and convert them to XX:XX am/pm format
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};

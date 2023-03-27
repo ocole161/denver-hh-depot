@@ -76,8 +76,9 @@ function App() {
     .then(data => {
         dispatch(setSpecials(data))
     })
-}, [dispatch])
+  }, [dispatch])
 
+  // Show spinner if specials or user haven't loaded yet
   if (specials[0] === undefined || user.username === null) {
     return (
       <Spinner animation="border" role="status">

@@ -9,11 +9,12 @@ import 'reactjs-popup/dist/index.css';
 
 function SpecialEdit({ neighborhoods, times, special }) {
     const dispatch = useDispatch()
+    const [errors, setErrors] = useState(null);
 
+    // States for open/close Popup
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
-    const [errors, setErrors] = useState(null);
     const [formData, setFormData] = useState({
         location_name: special.location_name,
         location_image: special.location_image,
@@ -38,6 +39,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
     })
     const { location_name, location_image, location_neighborhood, location_address, location_url, start_time, end_time, hh_special_text, monday, tuesday, wednesday, thursday, friday, saturday, sunday, beer, wine, cocktails, food } = formData
     
+    // Take datetimes and convert them to XX:XX am/pm format
     const startTime = new Date(start_time);
     const endTime = new Date(end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
@@ -46,6 +48,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
     
     const originalAddress = special.location_address
 
+    // Send the submitted address to GoogleMaps geocoder, set the returned lat and lng in the form
     const geocodeAddress = () => {
         console.log('Geocoding')
         console.log(originalAddress, special.location_address, formData.location_address)
@@ -55,8 +58,6 @@ function SpecialEdit({ neighborhoods, times, special }) {
         .then(data => {
             const latitude = data.results[0].geometry.location.lat;
             const longitude = data.results[0].geometry.location.lng;
-            console.log(latitude, longitude);
-            console.log(formData.location_name)
             formData.lat = latitude
             formData.lng = longitude
         })

@@ -9,13 +9,16 @@ import Col from 'react-bootstrap/esm/Col';
 
 function SpecialCardReview({ special }) {
     const dispatch = useDispatch()
+    const [errors, setErrors] = useState(null);
+
+    // Take datetimes and convert them to XX:XX am/pm format
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
-    const [errors, setErrors] = useState(null);
 
+    // Remove both create and update review needed flags
     function setReviewed(e) {
         e.preventDefault();
         fetch(`/specials/${special.id}`, {

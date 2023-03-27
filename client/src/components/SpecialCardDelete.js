@@ -9,15 +9,17 @@ import Alert from 'react-bootstrap/esm/Alert';
 import Col from 'react-bootstrap/esm/Col';
 
 function SpecialCardDelete({ special }) {
+    const dispatch = useDispatch();
+    const [errors, setErrors] = useState(null);
+
+    // Take datetimes and convert them to XX:XX am/pm format
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
-    const [errors, setErrors] = useState(null);
 
-    const dispatch = useDispatch();
-
+    // Remove the delete review flag on the special
     function setIgnored(e) {
         e.preventDefault();
         fetch(`/specials/${special.id}`, {

@@ -18,7 +18,7 @@ function MapAll({ specials }) {
   })
 
   const [userPosition, setUserPosition] = useState(null)
-
+  // 
   if (navigator.geolocation && userPosition === null) {
     navigator.geolocation.getCurrentPosition(
       (position) => {

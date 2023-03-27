@@ -12,25 +12,26 @@ import Spinner from "react-bootstrap/esm/Spinner"
 
 function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     const navigate = useNavigate();
+    const [errors, setErrors] = useState(null);
+    const { id } = useParams()
     const user = useSelector((state) => state.user);
     const specials = useSelector((state) => state.specials);
-    const { id } = useParams()
     const special = specials.find((special) => special.id === parseInt(id))
     
+    // Take datetimes and convert them to XX:XX am/pm format
     const startTime = new Date(special.start_time);
     const endTime = new Date(special.end_time);
     const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'UTC'};
     const startTimeString = startTime.toLocaleTimeString('eng-US', options);
     const endTimeString = endTime.toLocaleTimeString('eng-US', options)
     
-    const [errors, setErrors] = useState(null);
     const [userRating, setUserRating] = useState({
         rating: "",
         user_id: null,
         special_id: null,
     });
 
-
+    // Set the user's rating if one exists
     useEffect(() => {
         fetch("/user_special_reviews")
         .then(res => res.json())
@@ -46,8 +47,8 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
                 )}
         })
     }, [id, user.id])
-    
 
+    // Set a flag to request deletion for admin to review, but don't delete
     function requestDelete(e) {
         e.preventDefault();
         fetch(`/specials/${special.id}`, {
@@ -70,6 +71,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         })
     }
 
+    // If this is the first time a user has rated a special, create a new user_special_review, otherwise update the existing user_special_review
     function changeRating(e) {
         if(userRating.user_id === null) {
             const formData = {
@@ -115,6 +117,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         }
     }
 
+    // Show spinner if specials haven't loaded yet
     if(special === undefined) {
         return (
           <Spinner animation="border" role="status">

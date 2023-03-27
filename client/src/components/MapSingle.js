@@ -16,8 +16,8 @@ function MapSingle({ special }) {
     googleMapsApiKey: `${process.env.REACT_APP_API_KEY}`
   })
 
-  if (lat && lng) {
-    return isLoaded ? (
+  if (lat && lng && isLoaded) {
+    return(
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
@@ -29,10 +29,8 @@ function MapSingle({ special }) {
           />
           <></>
         </GoogleMap>
-    ) : <></>
-  } else {
-    return <></>
-  }
+    )
+  } else { return <></> }
 }
 
 export default MapSingle

@@ -10,10 +10,12 @@ import 'reactjs-popup/dist/index.css';
 function Login() {
     const dispatch = useDispatch();
 
+    // States for open/close Popup
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
     const [errors, setErrors] = useState(null);
+    
     const [formData, setFormData] = useState({
         username: '',
         password: ''

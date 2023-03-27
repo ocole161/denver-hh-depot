@@ -8,12 +8,11 @@ import Button from "react-bootstrap/esm/Button";
 
 function Admin() {
     const specials = useSelector((state) => state.specials);
-    const [show, setShow] = useState("showNew");
     const newSpecials = specials.filter(special => special.needs_create_review)
     const updatedSpecials = specials.filter(special => special.needs_update_review)
     const deleteRequests = specials.filter(special => special.needs_delete_review)
     
-
+    const [show, setShow] = useState("showNew");
 
     return (
         <>
@@ -29,7 +28,9 @@ function Admin() {
                             })}
                         </Row>
                     </Container>
-                    : null }
+                    : null 
+                }
+
                 {(show === "showChanges") ? 
                     <Container>
                         <Row>
@@ -38,7 +39,9 @@ function Admin() {
                             })}
                         </Row>
                     </Container>
-                    : null }
+                    : null 
+                }
+                
                 {(show === "showDeleted") ? 
                     <Container>
                         <Row>
@@ -47,7 +50,8 @@ function Admin() {
                             })}
                         </Row>
                     </Container>
-                    : null }
+                    : null 
+                }
         </>
     )
 }

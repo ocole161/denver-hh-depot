@@ -10,6 +10,7 @@ import 'reactjs-popup/dist/index.css';
 function SignUp() {
     const dispatch = useDispatch();
 
+    // States for open/close Popup
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
