@@ -49,7 +49,7 @@ function SpecialCardList({neighborhoods, times}) {
 
     return (
         <div className="card-list">
-        <h5 style={{backgroundColor: "white", display: 'flex', justifyContent: 'center', alignItems: 'center', display: "inline-block" }}>Neighborhood:&nbsp;
+        <h5 style={{backgroundColor: "white", justifyContent: 'center', alignItems: 'center', display: "inline-block" }}>Neighborhood:&nbsp;
             <DropdownButton as={ButtonGroup} title={selectedNeighborhood} onSelect={(eventKey) => setSelectedNeighborhood(eventKey)}>
                 <Dropdown.Item eventKey="All">All</Dropdown.Item>
                 {neighborhoods.map(neighborhood => {
