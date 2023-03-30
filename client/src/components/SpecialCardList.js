@@ -10,11 +10,15 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-function SpecialCardList({neighborhoods, times}) {
+function SpecialCardList({ neighborhoods, times }) {
     const specials = useSelector((state) => state.specials);
-    const [selectedNeighborhood, setSelectedNeighborhood] = useState("All");
-
     const [showMap, setShowMap] = useState(false);
+
+    const [selectedNeighborhood, setSelectedNeighborhood] = useState("All");
+    function neighborhoodFilter(list) {
+        return list.filter(special => special.location_neighborhood === selectedNeighborhood || selectedNeighborhood === "All")
+    }
+
 
     const [selectedType, setSelectedType] = useState("All");
     function typeFilter(list) {
@@ -27,7 +31,6 @@ function SpecialCardList({neighborhoods, times}) {
             default: return list;
         }
     }
-
 
     const [selectedDay, setSelectedDay] = useState("All");
     console.log(selectedDay)
@@ -45,7 +48,8 @@ function SpecialCardList({neighborhoods, times}) {
         }
     }
 
-    const specialsToShow = dayFilter(typeFilter(specials.filter(special => special.location_neighborhood === selectedNeighborhood || selectedNeighborhood === "All")))
+    // Filter based on user's input
+    const specialsToShow = dayFilter(typeFilter(neighborhoodFilter(specials)))
 
     return (
         <div className="card-list">
