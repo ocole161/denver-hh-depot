@@ -9,17 +9,25 @@ import Button from "react-bootstrap/esm/Button";
 
 function SpecialCardList({neighborhoods, times}) {
     const specials = useSelector((state) => state.specials);
-    const [showMap, setShowMap] = useState(false)
-    
+    const [selectedNeighborhood, setSelectedNeighborhood] = useState("All");
+    const specialsToShow = specials.filter(special => special.location_neighborhood === selectedNeighborhood || selectedNeighborhood === "All");
+
+    const [showMap, setShowMap] = useState(false);
+
     return (
         <>
+        <Button onClick={() => setSelectedNeighborhood("All")}>All</Button>
+        {neighborhoods.map(neighborhood => {
+            return <Button key={neighborhood} onClick={() => setSelectedNeighborhood(neighborhood)}>{neighborhood}</Button>})}
+        <br></br>
+        <br></br>
         <CreateNewSpecial neighborhoods={neighborhoods} times={times} />
-        <Button onClick={() => setShowMap(!showMap)}>{showMap ? "Show List" : "Show Map"}</Button>
+        <Button onClick={() => setShowMap(!showMap)}>{showMap ? "Show List" : "Specials Near Me"}</Button>
         {showMap ? 
-            <MapAll specials={specials}/> :
+            <MapAll specials={specialsToShow}/> :
             <Container>
                 <Row>
-                    {specials.map(special => {
+                    {specialsToShow.map(special => {
                     return <SpecialCard key={special.id} special={special}/>
                     })}
                 </Row>

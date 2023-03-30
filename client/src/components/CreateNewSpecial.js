@@ -107,7 +107,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
 
     return (
         <>
-        <Button onClick={() => setOpen(o => !o)}>Create New Special</Button>
+        <Button onClick={() => setOpen(o => !o)}>Add New Special</Button>
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
             <h1>New Special Submission</h1>
         <Form onSubmit={handleSubmit}>

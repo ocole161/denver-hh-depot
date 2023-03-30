@@ -21,7 +21,9 @@ function Admin() {
         <Button onClick={() => setShow("showDeleted")}>Delete Requests</Button>
 
                 {(show === "showNew") ? 
+
                     <Container>
+                        <h1>New Submissions</h1>
                         <Row>
                             {newSpecials.map(special => {
                                 return <SpecialCardReview key={special.id} special={special} />
@@ -33,6 +35,7 @@ function Admin() {
 
                 {(show === "showChanges") ? 
                     <Container>
+                        <h1>Edited</h1>
                         <Row>
                             {updatedSpecials.map(special => {
                                 return <SpecialCardReview key={special.id} special={special} />
@@ -44,6 +47,7 @@ function Admin() {
                 
                 {(show === "showDeleted") ? 
                     <Container>
+                        <h1>Delete Requests</h1>
                         <Row>
                             {deleteRequests.map(special => {
                                 return <SpecialCardDelete key={special.id} special={special} />
