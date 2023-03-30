@@ -27,10 +27,10 @@ function SpecialCard({ special }) {
             <Link to={`/specials/${special.id}`} className="no-format-link">
                 <Card className="card" >
                     <Row>
-                        <Col md={6}>
+                        <Col md={4}>
                             <Card.Img className="card_image" variant="top" src={special.location_image} alt={special.location_name} />
                         </Col>
-                        <Col md={6}>
+                        <Col md={8}>
                             <Card.Body>
                                 <Card.Title>{special.location_name}</Card.Title>
                                 <Card.Text>{startTimeString} - {endTimeString}</Card.Text>

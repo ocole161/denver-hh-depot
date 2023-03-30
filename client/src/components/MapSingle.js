@@ -18,10 +18,12 @@ function MapSingle({ special }) {
 
   if (lat && lng && isLoaded) {
     return(
+      <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
           zoom={15}
+          align="center"
         >
           <Marker
             position={center}
@@ -29,6 +31,7 @@ function MapSingle({ special }) {
           />
           <></>
         </GoogleMap>
+      </div>
     )
   } else { return <></> }
 }

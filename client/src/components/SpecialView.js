@@ -128,7 +128,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     } 
 
     return (
-        <>
+        <div className="card-list">
         <h1 className="special-view-title">{special.location_name}</h1>
         <Image className="view_image" rounded="true" src={special.location_image} alt={special.location_name} />
 
@@ -147,28 +147,31 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         </h4>
         <br></br>
         <h4>Specials: </h4>
-        <h4>{special.hh_special_text}</h4>
+        <h4 style={{ whiteSpace: 'pre-line' }}>{special.hh_special_text}</h4>
         <br></br>
         <Form.Group>
-            <Form.Label>Your Rating</Form.Label>
-            <Form.Select name="rating" value={userRating ? userRating.rating : ""} onChange={changeRating}>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </Form.Select>
+            <Form.Label>Your Rating:</Form.Label>
+            <div style={{ justifyContent: "center", alignItems: 'center', display: 'flex' }}>
+                <Form.Select style={{ width: "70px" }} name="rating" value={userRating ? userRating.rating : ""} onChange={changeRating}>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </Form.Select>
+            </div>
         </Form.Group>
-        <SpecialEdit special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
-        <Button onClick={requestDelete}>Request Deletion</Button>
+        <br></br>
+        <SpecialEdit  special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
+        <Button className="standard-button" onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         <br></br>
         <br></br>
         <a href={special.location_url}>Website</a>
         <p>{special.location_address}</p>
         <MapSingle special={special} />
-        </>
+        </div>
     )
 }
 export default SpecialView

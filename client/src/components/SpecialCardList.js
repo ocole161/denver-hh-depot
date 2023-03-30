@@ -49,7 +49,7 @@ function SpecialCardList({neighborhoods, times}) {
 
     return (
         <div className="card-list">
-        <h5>Neighborhood:&nbsp;
+        <h5 style={{backgroundColor: "white", display: 'flex', justifyContent: 'center', alignItems: 'center', display: "inline-block" }}>Neighborhood:&nbsp;
             <DropdownButton as={ButtonGroup} title={selectedNeighborhood} onSelect={(eventKey) => setSelectedNeighborhood(eventKey)}>
                 <Dropdown.Item eventKey="All">All</Dropdown.Item>
                 {neighborhoods.map(neighborhood => {
@@ -74,9 +74,10 @@ function SpecialCardList({neighborhoods, times}) {
                 <Dropdown.Item eventKey="Saturday">Saturday</Dropdown.Item>
                 <Dropdown.Item eventKey="Sunday">Sunday</Dropdown.Item>
             </DropdownButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <CreateNewSpecial neighborhoods={neighborhoods} times={times} />
         </h5>
-        <br></br>
-        <CreateNewSpecial neighborhoods={neighborhoods} times={times} /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br></br><br></br>
         <Button onClick={() => setShowMap(!showMap)}>{showMap ? "Show List" : "Specials Near Me (Map)"}</Button>
         {showMap ? 
             <MapAll specials={specialsToShow}/> :

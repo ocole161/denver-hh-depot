@@ -113,7 +113,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
 
     return (
         <>
-        <Button onClick={() => setOpen(o => !o)}>Edit</Button>
+        <Button className="standard-button" onClick={() => setOpen(o => !o)}>Edit</Button>
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
             <h1>Edit Information</h1>
             <Form onSubmit={handleSubmit}>
@@ -127,7 +127,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Neighborhood</Form.Label>
-                    <Form.Select aria-label="Select" name="location_neighborhood" value={location_neighborhood} onChange={handleChange} >
+                    <Form.Select style={{ width: "170px" }} aria-label="Select" name="location_neighborhood" value={location_neighborhood} onChange={handleChange} >
                         <option value="">Select Neighborhood</option>
                         {neighborhoods.map(neighborhood => {
                             return <option key={neighborhood} value={neighborhood} >{neighborhood}</option>})}
@@ -143,7 +143,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Start Time:</Form.Label>
-                    <Form.Select required aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
+                    <Form.Select style={{ width: "170px" }} required aria-label="Select" name="start_time" value={start_time} onChange={handleChange} >
                         <option value={startTimeString}>{startTimeString}</option>
                         {times.map(time => {
                             return <option key={time} value={time}>{time}</option>})}
@@ -151,7 +151,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
                 </Form.Group>
                 <Form.Group >
                 <Form.Label>End Time:</Form.Label>
-                    <Form.Select required aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
+                    <Form.Select style={{ width: "170px" }} required aria-label="Select" name="end_time" value={end_time} onChange={handleChange} >
                         <option value={endTimeString}>{endTimeString}</option>
                         {times.map(time => {
                             return <option key={time} value={time}>{time}</option>})}
@@ -182,9 +182,11 @@ function SpecialEdit({ neighborhoods, times, special }) {
                     <Form.Label>Happy Hour Specials</Form.Label>
                     <Form.Control as="textarea" rows="3" required name="hh_special_text" value={hh_special_text} onChange={handleChange} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </div>
                 {errors ? <Alert variant="warning" >{errors}</Alert> : null}
             </Form>
         </Popup>

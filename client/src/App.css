@@ -44,11 +44,11 @@
 
 .card_image {
   width: 100px;
-  height: 200px;
+  height: 180px;
 }
 
 .card {
-  width: 500px; 
+  width: 600px; 
   margin-top: 20px 
 }
 
@@ -74,7 +74,8 @@
 .standard-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #5d72ff;
+  background-color: rgb(99, 99, 99) !important;
+  border-color: rgb(99, 99, 99) !important;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
@@ -83,4 +84,19 @@
 
 .card-list {
   text-align: center;
+}
+
+.btn-primary {
+  background-color: rgb(99, 99, 99) !important;
+  border-color: rgb(99, 99, 99) !important;
+  color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: rgb(99, 99, 99) !important;
+  border-color: rgb(99, 99, 99) !important;
 }

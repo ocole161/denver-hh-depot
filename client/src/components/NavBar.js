@@ -23,7 +23,7 @@ function NavBar() {
     }
 
     return(
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
             <Container>
             <Navbar.Brand className="navbar-title" href="/">
                 <img 

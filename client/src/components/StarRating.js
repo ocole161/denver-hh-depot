@@ -4,7 +4,7 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 
 const StarRating = ({ rating }) => {
   const filledStars = [...Array(rating).keys()].map((i) => (
-    <FontAwesomeIcon key={i} icon={filledStar} />
+    <FontAwesomeIcon key={i} icon={filledStar} style={{ color: 'gold' }}/>
   ));
   const emptyStars = [...Array(5 - rating).keys()].map((i) => (
     <FontAwesomeIcon key={i} icon={emptyStar} />
