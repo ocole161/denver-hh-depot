@@ -54,7 +54,7 @@ function Login() {
 
     return (
         <>
-        <Button onClick={() => setOpen(o => !o)}>Login</Button>
+        <Button className="standard-button" onClick={() => setOpen(o => !o)}>Login</Button>
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
             <h1>Login</h1>
             <Form onSubmit={onSubmit}>

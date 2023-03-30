@@ -24,6 +24,7 @@ function SpecialCardList({neighborhoods, times}) {
             case "Wine": return list.filter(special => special.wine);
             case "Cocktails": return list.filter(special => special.cocktails);
             case "Food": return list.filter(special => special.food);
+            default: return list;
         }
     }
 
@@ -40,13 +41,14 @@ function SpecialCardList({neighborhoods, times}) {
             case "Friday": return list.filter(special => special.friday);
             case "Saturday": return list.filter(special => special.saturday);
             case "Sunday": return list.filter(special => special.sunday);
+            default: return list;
         }
     }
 
     const specialsToShow = dayFilter(typeFilter(specials.filter(special => special.location_neighborhood === selectedNeighborhood || selectedNeighborhood === "All")))
 
     return (
-        <>
+        <div className="card-list">
         <h5>Neighborhood:&nbsp;
             <DropdownButton as={ButtonGroup} title={selectedNeighborhood} onSelect={(eventKey) => setSelectedNeighborhood(eventKey)}>
                 <Dropdown.Item eventKey="All">All</Dropdown.Item>
@@ -86,7 +88,7 @@ function SpecialCardList({neighborhoods, times}) {
                 </Row>
             </Container>
         }
-        </>
+        </div>
     )
 }
 

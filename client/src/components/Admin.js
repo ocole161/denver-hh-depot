@@ -15,10 +15,10 @@ function Admin() {
     const [show, setShow] = useState("showNew");
 
     return (
-        <>
-        <Button onClick={() => setShow("showNew")}>New Submissions</Button>
-        <Button onClick={() => setShow("showChanges")}>Changes</Button>
-        <Button onClick={() => setShow("showDeleted")}>Delete Requests</Button>
+        <div className="card-list">
+        <Button className="standard-button" onClick={() => setShow("showNew")}>New Submissions</Button>
+        <Button className="standard-button" onClick={() => setShow("showChanges")}>Changes</Button>
+        <Button className="standard-button" onClick={() => setShow("showDeleted")}>Delete Requests</Button>
 
                 {(show === "showNew") ? 
 
@@ -56,7 +56,7 @@ function Admin() {
                     </Container>
                     : null 
                 }
-        </>
+        </div>
     )
 }
 

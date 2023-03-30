@@ -35,6 +35,9 @@ function MapAll({ specials }) {
   }
 
   return isLoaded ? (
+      <>
+      <br></br>
+      <br></br>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={userPosition ? userPosition : center}
@@ -56,6 +59,7 @@ function MapAll({ specials }) {
         <Marker position={userPosition} title="Your location" icon='https://img.icons8.com/color/48/null/user-location.png' />
         <></>
       </GoogleMap>
+      </>
   ) : <></>
 }
 
