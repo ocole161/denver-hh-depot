@@ -10,6 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 import Spinner from "react-bootstrap/esm/Spinner"
 
 
+
 function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     const navigate = useNavigate();
     const [errors, setErrors] = useState(null);
@@ -129,9 +130,13 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     return (
         <>
         <h1 className="special-view-title">{special.location_name}</h1>
-        <Image rounded="true" src={special.location_image} alt={special.location_name} />
+        <Image className="view_image" rounded="true" src={special.location_image} alt={special.location_name} />
+
+        <br></br>
+        <br></br>
         <h3>Happy Hour: {startTimeString} - {endTimeString}</h3>
-        <h3>Days: 
+        <br></br>
+        <h4> 
             {special.monday ? " Monday" : null}
             {special.tuesday ? " Tuesday" : null}
             {special.wednesday ? " Wednesday": null}
@@ -139,10 +144,11 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
             {special.friday ? " Friday" : null}
             {special.saturday ? " Saturday" : null}
             {special.sunday ? " Sunday" : null}
-        </h3>
-        <p>{special.location_address}</p>
-        <p>Specials: {special.hh_special_text}</p>
-        <a href={special.location_url}>Website</a>
+        </h4>
+        <br></br>
+        <h4>Specials: </h4>
+        <h4>{special.hh_special_text}</h4>
+        <br></br>
         <Form.Group>
             <Form.Label>Your Rating</Form.Label>
             <Form.Select name="rating" value={userRating ? userRating.rating : ""} onChange={changeRating}>
@@ -157,6 +163,10 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         <SpecialEdit special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
         <Button onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
+        <br></br>
+        <br></br>
+        <a href={special.location_url}>Website</a>
+        <p>{special.location_address}</p>
         <MapSingle special={special} />
         </>
     )

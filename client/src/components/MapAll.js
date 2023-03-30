@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { useNavigate } from 'react-router-dom';
 
 function MapAll({ specials }) {
+  const navigate = useNavigate()
+
   const containerStyle = {
     width: '100%',
     height: '600px'
@@ -46,6 +49,7 @@ function MapAll({ specials }) {
                 lng: parseFloat(special.lng)
               }}
               title={special.location_name}
+              onClick={() => navigate(`specials/${special.id}`)}
             />
           )}
         )}
