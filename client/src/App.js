@@ -28,7 +28,7 @@ function App() {
     "East Colfax", 
     "Five Points", 
     "Golden", 
-    "Hilands", 
+    "Highlands", 
     "Lakewood", 
     "Littleton", 
     "LoDo", 
