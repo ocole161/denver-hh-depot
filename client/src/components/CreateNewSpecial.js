@@ -102,7 +102,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
                     })
                 }
             })
-        }, "100");
+        }, "1000");
     }
 
     return (

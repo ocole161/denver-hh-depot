@@ -106,7 +106,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
         if (originalAddress !== formData.location_address) {
             geocodeAddress()
             // Timeout to wait for geocode to complete
-            setTimeout(() => { patchSpecial() }, 100)
+            setTimeout(() => { patchSpecial() }, 1000)
         }
         patchSpecial()
     }
