@@ -74,8 +74,9 @@ function SpecialCardDelete({ special }) {
                         {special.cocktails ? " Cocktails" :null} 
                         {special.food ? " Food" : null}</Card.Text>
                 </Card.Body>
-                <Button onClick={setDeleted}>Confirm Deletion</Button>
                 <Button onClick={setIgnored}>Ignore Request</Button>
+                <br></br>
+                <Button onClick={setDeleted}>Confirm Deletion</Button>
                 {errors ? <Alert variant="warning" >{errors}</Alert> : null}
             </Card>
             </Link>
