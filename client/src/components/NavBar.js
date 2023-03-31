@@ -36,12 +36,10 @@ function NavBar() {
                 Denver Happy Hour Depot
             </Navbar.Brand>
             </Container>
-
             {user.user_type === "admin" ? <Button className="standard-button" href="/admin">Admin</Button> : null} <></>
             {user.user_type === "visitor" ? <><Login />
                 <SignUp /> </>:
                 <Button className="standard-button" onClick={handleLogout}>Logout</Button>}
-
         </Navbar>
     )
 }

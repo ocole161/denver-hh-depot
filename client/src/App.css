@@ -70,6 +70,17 @@
   margin-right: auto;
 }
 
+.card-list {
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: rgb(99, 99, 99) !important;
+  border-color: rgb(99, 99, 99) !important;
+  color: white !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .standard-button {
   display: inline-block;
   padding: 12px 24px;
@@ -82,23 +93,8 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.card-list {
-  text-align: center;
-}
-
-.btn-primary {
-  background-color: rgb(99, 99, 99) !important;
-  border-color: rgb(99, 99, 99) !important;
-  color: white !important;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-color: rgb(99, 99, 99) !important;
-  border-color: rgb(99, 99, 99) !important;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+.clicked {
+  background-color: rgb(45, 45, 45) !important;
+  border-color: rgb(45, 45, 45) !important;
+  box-shadow: none;
 }

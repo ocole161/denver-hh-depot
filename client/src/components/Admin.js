@@ -16,46 +16,51 @@ function Admin() {
 
     return (
         <div className="card-list">
-        <Button className="standard-button" onClick={() => setShow("showNew")}>New Submissions</Button>
-        <Button className="standard-button" onClick={() => setShow("showChanges")}>Changes</Button>
-        <Button className="standard-button" onClick={() => setShow("showDeleted")}>Delete Requests</Button>
+        <Button className={`standard-button ${show === 'showNew' ? 'clicked' : ''}`} onClick={() => setShow("showNew")}>
+            New Submissions
+        </Button>
+        <Button className={`standard-button ${show === 'showChanges' ? 'clicked' : ''}`} onClick={() => setShow("showChanges")}>
+            Changes
+        </Button>
+        <Button className={`standard-button ${show === 'showDeleted' ? 'clicked' : ''}`} onClick={() => setShow("showDeleted")}>
+            Delete Requests
+        </Button>
 
-                {(show === "showNew") ? 
+        {(show === "showNew") ? 
+            <Container>
+                <h1>New Submissions</h1>
+                <Row>
+                    {newSpecials.map(special => {
+                        return <SpecialCardReview key={special.id} special={special} />
+                    })}
+                </Row>
+            </Container>
+            : null 
+        }
 
-                    <Container>
-                        <h1>New Submissions</h1>
-                        <Row>
-                            {newSpecials.map(special => {
-                                return <SpecialCardReview key={special.id} special={special} />
-                            })}
-                        </Row>
-                    </Container>
-                    : null 
-                }
-
-                {(show === "showChanges") ? 
-                    <Container>
-                        <h1>Edited</h1>
-                        <Row>
-                            {updatedSpecials.map(special => {
-                                return <SpecialCardReview key={special.id} special={special} />
-                            })}
-                        </Row>
-                    </Container>
-                    : null 
-                }
-                
-                {(show === "showDeleted") ? 
-                    <Container>
-                        <h1>Delete Requests</h1>
-                        <Row>
-                            {deleteRequests.map(special => {
-                                return <SpecialCardDelete key={special.id} special={special} />
-                            })}
-                        </Row>
-                    </Container>
-                    : null 
-                }
+        {(show === "showChanges") ? 
+            <Container>
+                <h1>Edited</h1>
+                <Row>
+                    {updatedSpecials.map(special => {
+                        return <SpecialCardReview key={special.id} special={special} />
+                    })}
+                </Row>
+            </Container>
+            : null 
+        }
+        
+        {(show === "showDeleted") ? 
+            <Container>
+                <h1>Delete Requests</h1>
+                <Row>
+                    {deleteRequests.map(special => {
+                        return <SpecialCardDelete key={special.id} special={special} />
+                    })}
+                </Row>
+            </Container>
+            : null 
+        }
         </div>
     )
 }
