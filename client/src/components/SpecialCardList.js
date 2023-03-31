@@ -48,7 +48,7 @@ function SpecialCardList({ neighborhoods, times }) {
         }
     }
 
-    // Filter based on user's input
+    // Filter based on user's input using the above filter functions
     const specialsToShow = dayFilter(typeFilter(neighborhoodFilter(specials)))
 
     return (

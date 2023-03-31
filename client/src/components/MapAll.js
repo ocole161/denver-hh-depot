@@ -52,7 +52,7 @@ function MapAll({ specials }) {
                 lng: parseFloat(special.lng)
               }}
               title={special.location_name}
-              onClick={() => navigate(`specials/${special.id}`)}
+              onClick={() => navigate(`special/${special.id}`)}
             />
           )}
         )}

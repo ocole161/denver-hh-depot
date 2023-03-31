@@ -94,7 +94,7 @@ function App() {
       <Routes>
             <Route path="/" element={<Home neighborhoods={neighborhoods} times={times} />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/specials/:id" element={<SpecialView neighborhoods={neighborhoods} times={times} />} />
+            <Route path="/special/:id" element={<SpecialView neighborhoods={neighborhoods} times={times} />} />
       </Routes>
     </BrowserRouter>
   );

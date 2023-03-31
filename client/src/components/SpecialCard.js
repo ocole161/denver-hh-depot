@@ -24,7 +24,7 @@ function SpecialCard({ special }) {
 
     return (
         <Col>
-            <Link to={`/specials/${special.id}`} className="no-format-link">
+            <Link to={`/special/${special.id}`} className="no-format-link">
                 <Card className="card" >
                     <Row>
                         <Col md={4}>
