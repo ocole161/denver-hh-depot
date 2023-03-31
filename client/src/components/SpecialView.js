@@ -166,10 +166,10 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
                 </Form.Select>
             </div>
         </Form.Group>
+        {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         <br></br>
         <SpecialEdit  special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
         <Button className="standard-button" onClick={requestDelete}>Request Deletion</Button>
-        {errors ? <Alert variant="warning" >{errors}</Alert> : null}
         </div>
     )
 }
