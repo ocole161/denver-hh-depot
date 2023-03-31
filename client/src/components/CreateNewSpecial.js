@@ -98,7 +98,6 @@ function CreateNewSpecial({ neighborhoods, times }) {
                 } else {
                     r.json().then(json => {
                         setErrors(json.error)
-                        console.log(json)
                     })
                 }
             })
