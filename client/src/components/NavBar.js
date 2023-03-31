@@ -29,8 +29,8 @@ function NavBar() {
                 <img 
                     alt="logo"
                     src={logo_happy_hour}
-                    width="120"
-                    height="100"
+                    width="150"
+                    height="120"
                     className="d-inline-block align-top"
                 />{' '}
                 Denver Happy Hour Depot
