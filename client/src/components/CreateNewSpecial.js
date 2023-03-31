@@ -93,7 +93,7 @@ function CreateNewSpecial({ neighborhoods, times }) {
                         dispatch(addSpecial(json))
                         setErrors(null)
                         closeModal()
-                        navigate(`/specials/${json.id}`)
+                        navigate(`/special/${json.id}`)
                 })
                 } else {
                     r.json().then(json => {

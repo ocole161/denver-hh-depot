@@ -33,7 +33,6 @@ function SpecialCardList({ neighborhoods, times }) {
     }
 
     const [selectedDay, setSelectedDay] = useState("All");
-    console.log(selectedDay)
     function dayFilter(list) {
         switch(selectedDay) {
             case "All": return list;
