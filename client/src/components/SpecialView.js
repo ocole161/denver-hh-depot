@@ -130,8 +130,12 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
     return (
         <div className="card-list">
         <h1 className="special-view-title">{special.location_name}</h1>
-        <Image className="view_image" rounded="true" src={special.location_image} alt={special.location_name} />
-
+        <div style={{ display: 'inline-flex', justifyContent: "center", alignItems: 'center', flexDirection: 'row' }}>
+            <Image className="view_image" rounded="true" src={special.location_image} alt={special.location_name} />
+            <MapSingle special={special} />
+        </div>
+        <p>{special.location_address}</p>
+        <a href={special.location_url}>Website</a>
         <br></br>
         <br></br>
         <h3>Happy Hour: {startTimeString} - {endTimeString}</h3>
@@ -150,7 +154,7 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         <h4 style={{ whiteSpace: 'pre-line' }}>{special.hh_special_text}</h4>
         <br></br>
         <Form.Group>
-            <Form.Label>Your Rating:</Form.Label>
+            <h4>Your Rating:</h4>
             <div style={{ justifyContent: "center", alignItems: 'center', display: 'flex' }}>
                 <Form.Select style={{ width: "70px" }} name="rating" value={userRating ? userRating.rating : ""} onChange={changeRating}>
                     <option value="0">0</option>
@@ -166,11 +170,6 @@ function SpecialView({neighborhoods, times, onUpdateSpecial }) {
         <SpecialEdit  special={special} neighborhoods={neighborhoods} times={times} onUpdateSpecial={onUpdateSpecial} />
         <Button className="standard-button" onClick={requestDelete}>Request Deletion</Button>
         {errors ? <Alert variant="warning" >{errors}</Alert> : null}
-        <br></br>
-        <br></br>
-        <a href={special.location_url}>Website</a>
-        <p>{special.location_address}</p>
-        <MapSingle special={special} />
         </div>
     )
 }

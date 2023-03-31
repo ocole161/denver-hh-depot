@@ -182,6 +182,7 @@ function SpecialEdit({ neighborhoods, times, special }) {
                     <Form.Label>Happy Hour Specials</Form.Label>
                     <Form.Control as="textarea" rows="3" required name="hh_special_text" value={hh_special_text} onChange={handleChange} />
                 </Form.Group>
+                <br></br>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Button variant="primary" type="submit">
                         Submit

@@ -53,8 +53,9 @@
 }
 
 .view_image {
-  width: 400px;
+  width: 100%;
   height: 400px;
+  margin-right: 10px;
 }
 
 .navbar-title {
